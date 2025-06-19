@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 2012.0, 149.0, 345.0, 679.0 ],
+		"rect" : [ 1705.0, 135.0, 337.0, 679.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,19 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 379.0, 295.0, 74.0, 22.0 ],
+					"text" : "loadmess -2"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-15",
 					"linecount" : 2,
@@ -1447,6 +1460,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-8", 1 ],
+					"hidden" : 1,
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-36", 1 ],
 					"source" : [ "obj-14", 0 ]
 				}
@@ -1973,6 +1994,13 @@
 				"bootpath" : "~/works/25_FU/_dev/FU_audio",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mugelsee_wave.wav",
+				"bootpath" : "~/works/25_FU/_dev/FU_audio",
+				"patcherrelativepath" : ".",
+				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
