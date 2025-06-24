@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 466.0, 201.0, 61.0, 22.0 ],
+					"patching_rect" : [ 476.0, 200.0, 61.0, 22.0 ],
 					"text" : "delay 800"
 				}
 
@@ -93,8 +93,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 231.0, 140.0, 22.0 ],
-					"text" : "open mountainWind.wav"
+					"patching_rect" : [ 315.0, 231.0, 150.0, 22.0 ],
+					"text" : "open mugelsee_wave.wav"
 				}
 
 			}
@@ -105,7 +105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 466.0, 231.0, 41.0, 22.0 ],
+					"patching_rect" : [ 476.0, 230.0, 41.0, 22.0 ],
 					"text" : "loop 1"
 				}
 
