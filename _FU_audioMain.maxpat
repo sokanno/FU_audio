@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1705.0, 135.0, 337.0, 679.0 ],
+		"rect" : [ 2126.0, 87.0, 337.0, 679.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1930,34 +1930,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "214969-Resonant_Metal.wav",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio/ambients",
-				"patcherrelativepath" : "./ambients",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "214990-Drifting.wav",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio/ambients",
-				"patcherrelativepath" : "./ambients",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "215002-Preparing.wav",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio/ambients",
-				"patcherrelativepath" : "./ambients",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "215007-Rhythmical_Shining.wav",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio/ambients",
-				"patcherrelativepath" : "./ambients",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "M4L.bal2~.maxpat",
 				"bootpath" : "C74:/patchers/m4l/Tools resources",
 				"type" : "JSON",
@@ -1967,13 +1939,6 @@
 				"name" : "M4L.cross1~.maxpat",
 				"bootpath" : "C74:/patchers/m4l/Tools resources",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Serenity_fadeout.wav",
-				"bootpath" : "~/Desktop",
-				"patcherrelativepath" : "../../../../Desktop",
-				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
