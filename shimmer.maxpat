@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 178.0, 1176.0, 1003.0 ],
+		"rect" : [ 2218.0, 87.0, 1380.0, 959.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-93",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1027.0, 203.0, 40.0, 22.0 ],
+					"text" : "*~ 0.9"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-91",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1027.0, 233.5, 285.0, 22.0 ],
+					"text" : "limi~ 1 @threshold -1. @release 30 @lookahead 64"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-76",
 					"maxclass" : "newobj",
@@ -120,7 +144,7 @@
 					"patching_rect" : [ 382.0, 752.0, 100.0, 40.0 ],
 					"preset_data" : [ 						{
 							"number" : 1,
-							"data" : [ 5, "obj-74", "flonum", "float", 1.0, 5, "obj-63", "toggle", "int", 1, 5, "obj-60", "toggle", "int", 0, 5, "obj-57", "number", "int", 1, 5, "obj-47", "flonum", "float", 0.629999995231628, 5, "obj-46", "flonum", "float", 0.800000011920929, 5, "obj-31", "flonum", "float", 0.5, 5, "obj-30", "number", "int", 0, 5, "obj-27", "number", "int", 0, 5, "<invalid>", "number", "int", 0, 5, "obj-23", "number", "int", 125, 5, "obj-21", "number", "int", 250, 5, "obj-10", "number", "int", 250, 5, "obj-9", "toggle", "int", 1, 5, "obj-3", "filtergraph~", "nfilters", 1, 9, "obj-3", "filtergraph~", "setoptions", 0, 0, 0, 0, 0, 8, "obj-3", "filtergraph~", "params", 0, 6.282524108886719, 1.0, 0.593083024024963, 5, "obj-2", "umenu", "int", 0, 5, "<invalid>", "playlist~", "preset_count", 1, 7, "<invalid>", "playlist~", "preset_clipstate", 1, "filekind", "audiofile", 7, "<invalid>", "playlist~", "preset_clipstate", 1, "absolutepath", "huge.aiff", 7, "<invalid>", "playlist~", "preset_clipstate", 1, "filename", "huge.aiff", 7, "<invalid>", "playlist~", "preset_clipstate", 1, "loop", 0, 8, "<invalid>", "playlist~", "preset_clipstate", 1, "selection", -1.0, -1.0, 7, "<invalid>", "playlist~", "preset_clipstate", 1, "id", "u690012938", 4, "<invalid>", "playlist~", "preset_execute" ]
+							"data" : [ 5, "obj-74", "flonum", "float", 0.899999976158142, 5, "obj-63", "toggle", "int", 1, 5, "obj-60", "toggle", "int", 0, 5, "obj-57", "number", "int", 1, 5, "obj-47", "flonum", "float", 0.75, 5, "obj-46", "flonum", "float", 0.800000011920929, 5, "obj-31", "flonum", "float", 0.5, 5, "obj-30", "number", "int", 0, 5, "obj-27", "number", "int", 0, 5, "obj-23", "number", "int", 250, 5, "obj-21", "number", "int", 63, 5, "obj-10", "number", "int", 250, 5, "obj-9", "toggle", "int", 1, 5, "obj-3", "filtergraph~", "nfilters", 1, 9, "obj-3", "filtergraph~", "setoptions", 0, 0, 0, 0, 0, 8, "obj-3", "filtergraph~", "params", 0, 6.282524108886719, 1.0, 0.593083024024963, 5, "obj-2", "umenu", "int", 0 ]
 						}
  ]
 				}
@@ -2900,7 +2924,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 178.0, 837.0, 643.0 ],
+						"rect" : [ 2341.0, 198.0, 837.0, 643.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2963,7 +2987,7 @@
 									"patching_rect" : [ 294.0, 486.0, 100.0, 40.0 ],
 									"preset_data" : [ 										{
 											"number" : 1,
-											"data" : [ 5, "obj-9", "toggle", "int", 1, 5, "obj-17", "number", "int", 2, 5, "obj-3", "live.gain~", "float", 0.097481615841389, 5, "obj-32", "number", "int", 28 ]
+											"data" : [ 5, "obj-9", "toggle", "int", 1, 5, "obj-17", "number", "int", 15, 5, "obj-3", "live.gain~", "float", -2.188976287841797, 5, "obj-32", "number", "int", 28 ]
 										}
  ]
 								}
@@ -3237,7 +3261,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 183.0, 264.0, 94.0, 22.0 ],
-									"text" : "allsamples.5"
+									"text" : "allsamples.15"
 								}
 
 							}
@@ -6310,7 +6334,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"order" : 0,
-					"source" : [ "obj-92", 0 ]
+					"source" : [ "obj-91", 0 ]
 				}
 
 			}
@@ -6318,7 +6342,21 @@
 				"patchline" : 				{
 					"destination" : [ "obj-75", 0 ],
 					"order" : 1,
+					"source" : [ "obj-91", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-93", 0 ],
 					"source" : [ "obj-92", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-91", 0 ],
+					"source" : [ "obj-93", 0 ]
 				}
 
 			}
