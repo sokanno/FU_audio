@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 486.0, 221.0, 1324.0, 1140.0 ],
+		"rect" : [ 486.0, 155.0, 1324.0, 1140.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -483,7 +483,7 @@
 									"restore" : 									{
 										"Bias" : [ 0.0 ],
 										"Bypass" : [ 0.0 ],
-										"Gain" : [ 6.0 ],
+										"Gain" : [ 0.0 ],
 										"presets" : [ 0.0 ]
 									}
 ,
@@ -1236,7 +1236,7 @@
 									"restore" : 									{
 										"Bias" : [ 0.0 ],
 										"Bypass" : [ 0.0 ],
-										"Gain" : [ 6.0 ],
+										"Gain" : [ 0.0 ],
 										"presets" : [ 0.0 ]
 									}
 ,
