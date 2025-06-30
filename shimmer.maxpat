@@ -144,7 +144,7 @@
 					"patching_rect" : [ 382.0, 752.0, 100.0, 40.0 ],
 					"preset_data" : [ 						{
 							"number" : 1,
-							"data" : [ 5, "obj-74", "flonum", "float", 0.899999976158142, 5, "obj-63", "toggle", "int", 1, 5, "obj-60", "toggle", "int", 0, 5, "obj-57", "number", "int", 1, 5, "obj-47", "flonum", "float", 0.75, 5, "obj-46", "flonum", "float", 0.800000011920929, 5, "obj-31", "flonum", "float", 0.5, 5, "obj-30", "number", "int", 0, 5, "obj-27", "number", "int", 0, 5, "obj-23", "number", "int", 250, 5, "obj-21", "number", "int", 63, 5, "obj-10", "number", "int", 250, 5, "obj-9", "toggle", "int", 1, 5, "obj-3", "filtergraph~", "nfilters", 1, 9, "obj-3", "filtergraph~", "setoptions", 0, 0, 0, 0, 0, 8, "obj-3", "filtergraph~", "params", 0, 6.282524108886719, 1.0, 0.593083024024963, 5, "obj-2", "umenu", "int", 0 ]
+							"data" : [ 5, "obj-74", "flonum", "float", 0.899999976158142, 5, "obj-63", "toggle", "int", 1, 5, "obj-60", "toggle", "int", 0, 5, "obj-57", "number", "int", 1, 5, "obj-47", "flonum", "float", 0.970000028610229, 5, "obj-46", "flonum", "float", 0.800000011920929, 5, "obj-31", "flonum", "float", 0.5, 5, "obj-30", "number", "int", 0, 5, "obj-27", "number", "int", 0, 5, "obj-23", "number", "int", 250, 5, "obj-21", "number", "int", 125, 5, "obj-10", "number", "int", 250, 5, "obj-9", "toggle", "int", 1, 5, "obj-3", "filtergraph~", "nfilters", 1, 9, "obj-3", "filtergraph~", "setoptions", 0, 1, 0, 0, 0, 8, "obj-3", "filtergraph~", "params", 0, 5004.3974609375, 1.0, 0.593083024024963, 5, "obj-2", "umenu", "int", 1 ]
 						}
  ]
 				}
@@ -3719,7 +3719,7 @@
 					"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 770.0, 182.0, 206.0, 147.0 ],
-					"setfilter" : [ 0, 0, 0, 0, 0, 6.282524108886719, 1.0, 0.593083024024963, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
+					"setfilter" : [ 0, 1, 0, 0, 0, 5004.3974609375, 1.0, 0.593083024024963, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
