@@ -1623,7 +1623,7 @@
 					"patching_rect" : [ 134.0, 610.0, 100.0, 40.0 ],
 					"preset_data" : [ 						{
 							"number" : 1,
-							"data" : [ 5, "obj-5", "live.gain~", "float", 0.175663605332375, 5, "obj-6", "live.gain~", "float", -0.000000000000002, 5, "obj-7", "live.gain~", "float", 0.351976633071899, 5, "obj-8", "live.gain~", "float", -2.0, 5, "obj-20", "live.gain~", "float", -70.0, 5, "obj-19", "live.gain~", "float", -70.0, 5, "obj-18", "live.gain~", "float", -70.0, 5, "obj-17", "live.gain~", "float", -70.0, 5, "obj-31", "flonum", "float", 0.899999976158142, 5, "obj-42", "toggle", "int", 0 ]
+							"data" : [ 5, "obj-5", "live.gain~", "float", -1.196850419044495, 5, "obj-6", "live.gain~", "float", -0.000000000000002, 5, "obj-7", "live.gain~", "float", 0.351976633071899, 5, "obj-8", "live.gain~", "float", -2.0, 5, "obj-20", "live.gain~", "float", -70.0, 5, "obj-19", "live.gain~", "float", -70.0, 5, "obj-18", "live.gain~", "float", -70.0, 5, "obj-17", "live.gain~", "float", -70.0, 5, "obj-31", "flonum", "float", 0.899999976158142, 5, "obj-42", "toggle", "int", 0 ]
 						}
  ]
 				}
