@@ -779,7 +779,7 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 39.173828, 132.0, 87.5, 22.0 ],
 									"restore" : 									{
-										"Feedback" : [ -4.999999999999998 ],
+										"Feedback" : [ -9.999999999999996 ],
 										"HPF" : [ 20.0 ],
 										"LPF" : [ 20000.0 ],
 										"Mix" : [ 50.0 ],
@@ -3249,7 +3249,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 835.0, 814.0, 35.0, 20.0 ],
+					"patching_rect" : [ 835.0, 814.0, 58.0, 20.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"triscale" : 0.9
@@ -3388,7 +3388,7 @@
 					"patching_rect" : [ 99.0, 663.0, 100.0, 40.0 ],
 					"preset_data" : [ 						{
 							"number" : 1,
-							"data" : [ 5, "obj-6", "flonum", "float", 0.823155760765076, 5, "obj-7", "flonum", "float", 1.049999952316284, 5, "obj-8", "slider", "float", 0.823155760765076, 5, "obj-9", "slider", "float", 1.0, 5, "obj-56", "flonum", "float", -1.820000052452087, 5, "obj-55", "slider", "float", 0.0, 5, "obj-58", "flonum", "float", 0.85541570186615, 5, "obj-57", "slider", "float", 0.85541570186615, 5, "obj-37", "toggle", "int", 1, 5, "obj-17", "number", "int", 3, 5, "obj-32", "number", "int", 18, 5, "obj-41", "number", "int", 38, 4, "obj-102", "function", "clear", 7, "obj-102", "function", "add", 0.0, 0.0, 0, 7, "obj-102", "function", "add", 31.725888324873097, 1.0, 0, 7, "obj-102", "function", "add", 253.807106598984774, 1.0, 0, 7, "obj-102", "function", "add", 736.040609137055867, 0.0, 0, 5, "obj-102", "function", "domain", 5000.0, 6, "obj-102", "function", "range", 0.0, 1.0, 5, "obj-102", "function", "mode", 0, 5, "obj-76", "flonum", "float", 1.5 ]
+							"data" : [ 5, "obj-6", "flonum", "float", 0.823155760765076, 5, "obj-7", "flonum", "float", 1.049999952316284, 5, "obj-8", "slider", "float", 0.823155760765076, 5, "obj-9", "slider", "float", 1.0, 5, "obj-56", "flonum", "float", -1.820000052452087, 5, "obj-55", "slider", "float", 0.0, 5, "obj-58", "flonum", "float", 0.85541570186615, 5, "obj-57", "slider", "float", 0.85541570186615, 5, "obj-37", "toggle", "int", 1, 5, "obj-17", "number", "int", 3, 5, "obj-32", "number", "int", 18, 5, "obj-41", "number", "int", 38, 4, "obj-102", "function", "clear", 7, "obj-102", "function", "add", 0.0, 0.0, 0, 7, "obj-102", "function", "add", 31.725888324873097, 1.0, 0, 7, "obj-102", "function", "add", 253.807106598984774, 1.0, 0, 7, "obj-102", "function", "add", 736.040609137055867, 0.0, 0, 5, "obj-102", "function", "domain", 5000.0, 6, "obj-102", "function", "range", 0.0, 1.0, 5, "obj-102", "function", "mode", 0, 5, "obj-76", "flonum", "float", 1.25 ]
 						}
  ]
 				}
