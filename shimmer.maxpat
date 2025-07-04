@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 2218.0, 87.0, 1380.0, 959.0 ],
+		"rect" : [ 134.0, 178.0, 1380.0, 959.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-95",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 655.0, 602.0, 54.0, 22.0 ],
+					"text" : "delay~ 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-90",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 505.0, 614.0, 54.0, 22.0 ],
+					"text" : "delay~ 1"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-93",
 					"maxclass" : "newobj",
@@ -2924,7 +2948,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 2341.0, 198.0, 837.0, 643.0 ],
+						"rect" : [ 134.0, 178.0, 837.0, 643.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3261,7 +3285,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 183.0, 264.0, 94.0, 22.0 ],
-									"text" : "allsamples.15"
+									"text" : "allsamples.6"
 								}
 
 							}
@@ -3654,20 +3678,6 @@
 					}
 ,
 					"text" : "p samplePlay"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-90",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 492.5, 675.0, 93.0, 22.0 ],
-					"text" : "pfft~ 1st 4096 4"
 				}
 
 			}
@@ -4184,8 +4194,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 685.0, 555.0, 98.0, 19.0 ],
-					"text" : "pfft~ 1stfft 4096 4"
+					"patching_rect" : [ 685.0, 555.0, 78.0, 19.0 ],
+					"text" : "pfft~ 1stfft 2048 4"
 				}
 
 			}
@@ -4950,8 +4960,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 222.0, 568.0, 98.0, 19.0 ],
-					"text" : "pfft~ 1stfft 4096 4"
+					"patching_rect" : [ 222.0, 568.0, 78.0, 19.0 ],
+					"text" : "pfft~ 1stfft 2048 4"
 				}
 
 			}
@@ -5719,7 +5729,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-59", 2 ],
+					"destination" : [ "obj-95", 0 ],
 					"source" : [ "obj-40", 0 ]
 				}
 
@@ -5894,7 +5904,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-59", 1 ],
+					"destination" : [ "obj-90", 0 ],
 					"source" : [ "obj-56", 0 ]
 				}
 
@@ -6332,6 +6342,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-59", 1 ],
+					"source" : [ "obj-90", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"order" : 0,
 					"source" : [ "obj-91", 0 ]
@@ -6369,6 +6386,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-59", 2 ],
+					"source" : [ "obj-95", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-98", 0 ]
 				}
@@ -6395,13 +6419,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "1st",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio",
-				"patcherrelativepath" : ".",
-				"type" : "maxb",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "1stfft",
 				"bootpath" : "~/works/25_FU/_dev/FU_audio",
 				"patcherrelativepath" : ".",

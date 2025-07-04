@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 2126.0, 87.0, 376.0, 679.0 ],
+		"rect" : [ 134.0, 178.0, 376.0, 679.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -2456,13 +2456,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "1st",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio",
-				"patcherrelativepath" : ".",
-				"type" : "maxb",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "1stfft",
 				"bootpath" : "~/works/25_FU/_dev/FU_audio",
 				"patcherrelativepath" : ".",
