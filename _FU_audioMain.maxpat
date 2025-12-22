@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 349.0, 339.0, 479.0, 702.0 ],
+		"rect" : [ 217.0, 122.0, 479.0, 702.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -199,7 +199,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 30.0, 148.0, 65.0, 22.0 ],
+					"patching_rect" : [ 16.25, 148.0, 65.0, 22.0 ],
 					"text" : "tenjotengo",
 					"varname" : "tenjotengo"
 				}
@@ -310,7 +310,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-32",
@@ -1754,7 +1753,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 30.0, 185.0, 65.0, 22.0 ],
+					"patching_rect" : [ 134.0, 131.0, 65.0, 22.0 ],
 					"text" : "tenjotenge",
 					"varname" : "tenjotenge"
 				}
@@ -1973,20 +1972,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 1 ],
 					"source" : [ "obj-29", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 1 ],
-					"source" : [ "obj-3", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}
