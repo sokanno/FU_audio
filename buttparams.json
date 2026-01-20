@@ -1,0 +1,28 @@
+{
+	"pattrstorage" : 	{
+		"name" : "buttparams",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"bp.Reverb 2::Damping" : [ 1800.000000000000227 ],
+					"bp.Reverb 2::Decay" : [ 45.0 ],
+					"bp.Reverb 2::Diffusion" : [ 0.2 ],
+					"bp.Reverb 2::Mix" : [ 50.0 ],
+					"bp.Reverb 2::Size" : [ 32.086614173228341 ],
+					"bp.Reverb 2::bypass" : [ 0.0 ],
+					"bp.Reverb 2[2]::Damping" : [ 5800.74733464216115 ],
+					"bp.Reverb 2[2]::Decay" : [ 45.0 ],
+					"bp.Reverb 2[2]::Diffusion" : [ 0.546456692913385 ],
+					"bp.Reverb 2[2]::Mix" : [ 72.047244094488136 ],
+					"bp.Reverb 2[2]::Size" : [ 86.417322834645589 ],
+					"bp.Reverb 2[2]::bypass" : [ 0.0 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
