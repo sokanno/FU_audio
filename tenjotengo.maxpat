@@ -40,6 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 314.0, 538.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-71",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 314.0, 507.0, 79.0, 22.0 ],
+					"text" : "random 3000"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-25",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -138,7 +162,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-67",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -150,7 +174,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-46",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -363,7 +387,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 872.0, 61.0, 73.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1615, 131, 2061, 857 ],
+						"client_rect" : [ 100, 168, 730, 744 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 583, 69, 1034, 197 ]
@@ -485,7 +509,7 @@
 										"valueof" : 										{
 											"parameter_initial" : [ 50.0 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "Mix[1]",
+											"parameter_longname" : "Mix[4]",
 											"parameter_mmax" : 100.0,
 											"parameter_modmode" : 0,
 											"parameter_shortname" : "Mix",
@@ -547,7 +571,7 @@
 											"parameter_exponent" : 0.5,
 											"parameter_initial" : [ -72.0 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "Feedback",
+											"parameter_longname" : "Feedback[1]",
 											"parameter_mmax" : 0.0,
 											"parameter_mmin" : -72.0,
 											"parameter_modmode" : 0,
@@ -609,7 +633,7 @@
 											"parameter_exponent" : 2.0,
 											"parameter_initial" : [ 20000.0 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "LPF",
+											"parameter_longname" : "LPF[1]",
 											"parameter_mmax" : 20000.0,
 											"parameter_mmin" : 20.0,
 											"parameter_modmax" : 20000.0,
@@ -674,7 +698,7 @@
 											"parameter_initial" : [ 20.0 ],
 											"parameter_initial_enable" : 1,
 											"parameter_invisible" : 1,
-											"parameter_longname" : "HPF",
+											"parameter_longname" : "HPF[1]",
 											"parameter_mmax" : 20000.0,
 											"parameter_mmin" : 20.0,
 											"parameter_modmax" : 20000.0,
@@ -753,7 +777,7 @@
 											"parameter_initial" : [ 200.0 ],
 											"parameter_initial_enable" : 1,
 											"parameter_invisible" : 1,
-											"parameter_longname" : "time",
+											"parameter_longname" : "time[1]",
 											"parameter_mmax" : 2000.0,
 											"parameter_modmode" : 0,
 											"parameter_shortname" : "Time",
@@ -779,12 +803,12 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 39.173828, 132.0, 87.5, 22.0 ],
 									"restore" : 									{
-										"Feedback" : [ -4.999999999999998 ],
+										"Feedback" : [ -13.000000000000002 ],
 										"HPF" : [ 20.0 ],
 										"LPF" : [ 20000.0 ],
 										"Mix" : [ 50.0 ],
 										"bypass" : [ 0.0 ],
-										"time" : [ 500.0 ]
+										"time" : [ 200.0 ]
 									}
 ,
 									"text" : "autopattr",
@@ -885,7 +909,7 @@
 											"parameter_enum" : [ "val1", "val2" ],
 											"parameter_initial" : [ 0.0 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "bypass[2]",
+											"parameter_longname" : "bypass[5]",
 											"parameter_mmax" : 1,
 											"parameter_modmode" : 0,
 											"parameter_shortname" : "bypass",
@@ -1935,7 +1959,7 @@
 											"parameter_enum" : [ "val1", "val2" ],
 											"parameter_initial" : [ 0.0 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "bypass",
+											"parameter_longname" : "bypass[4]",
 											"parameter_mmax" : 1,
 											"parameter_modmode" : 0,
 											"parameter_shortname" : "bypass",
@@ -2038,7 +2062,7 @@
 										"valueof" : 										{
 											"parameter_initial" : [ 50 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "Mix",
+											"parameter_longname" : "Mix[3]",
 											"parameter_mmax" : 100.0,
 											"parameter_modmode" : 0,
 											"parameter_shortname" : "Mix",
@@ -2166,7 +2190,7 @@
 										"valueof" : 										{
 											"parameter_initial" : [ 0.2 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "Diffusion",
+											"parameter_longname" : "Diffusion[1]",
 											"parameter_mmax" : 1.0,
 											"parameter_modmode" : 0,
 											"parameter_shortname" : "Diffusion",
@@ -2471,7 +2495,7 @@
 										"valueof" : 										{
 											"parameter_initial" : [ 45 ],
 											"parameter_initial_enable" : 1,
-											"parameter_longname" : "Decay",
+											"parameter_longname" : "Decay[4]",
 											"parameter_mmax" : 100.0,
 											"parameter_modmode" : 0,
 											"parameter_shortname" : "Decay",
@@ -3326,7 +3350,7 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 0, 31.725888324873097, 1.0, 0, 253.807106598984774, 1.0, 0, 736.040609137055867, 0.0, 0 ],
+					"addpoints" : [ 0.0, 0.0, 0, 31.725888324873097, 1.0, 0, 31.725888324873097, 1.0, 0, 228.426395939086291, 1.0, 0, 736.040609137055867, 0.0, 0 ],
 					"bgcolor" : [ 0.8, 0.8, 0.8, 1.0 ],
 					"classic_curve" : 1,
 					"domain" : 5000.0,
@@ -3338,7 +3362,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "float", "", "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 757.0, 504.0, 209.0, 180.0 ]
+					"patching_rect" : [ 752.0, 504.0, 209.0, 180.0 ]
 				}
 
 			}
@@ -3619,7 +3643,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 529.0, 373.0, 94.0, 35.0 ],
-					"text" : "crowdsamples.3"
+					"text" : "crowdsamples.5"
 				}
 
 			}
@@ -3883,7 +3907,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-98", 0 ],
-					"midpoints" : [ 829.833333333333371, 683.0, 906.5, 683.0 ],
+					"midpoints" : [ 824.833333333333371, 683.0, 906.5, 683.0 ],
 					"source" : [ "obj-102", 1 ]
 				}
 
@@ -4047,6 +4071,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-70", 0 ],
+					"order" : 2,
+					"source" : [ "obj-27", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-71", 0 ],
 					"order" : 1,
 					"source" : [ "obj-27", 0 ]
 				}
@@ -4056,13 +4088,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
 					"source" : [ "obj-29", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -4119,13 +4144,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
-					"source" : [ "obj-36", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-37", 0 ]
 				}
@@ -4144,13 +4162,6 @@
 					"destination" : [ "obj-28", 0 ],
 					"order" : 1,
 					"source" : [ "obj-38", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
-					"source" : [ "obj-39", 0 ]
 				}
 
 			}
@@ -4235,13 +4246,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-54", 0 ],
 					"source" : [ "obj-42", 4 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
-					"source" : [ "obj-43", 0 ]
 				}
 
 			}
@@ -4422,13 +4426,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
-					"source" : [ "obj-68", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-69", 4 ]
 				}
@@ -4478,6 +4475,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-73", 0 ],
+					"source" : [ "obj-71", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-38", 0 ],
+					"source" : [ "obj-73", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-77", 1 ],
 					"source" : [ "obj-76", 0 ]
 				}
@@ -4520,64 +4531,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-12::obj-1" : [ "Mix[1]", "Mix", 0 ],
-			"obj-12::obj-21" : [ "HPF", "HPF", 0 ],
-			"obj-12::obj-25" : [ "LPF", "LPF", 0 ],
-			"obj-12::obj-28" : [ "Feedback", "Feedback", 0 ],
-			"obj-12::obj-7" : [ "bypass[2]", "bypass", 0 ],
-			"obj-12::obj-9" : [ "time", "Time", 0 ],
-			"obj-52::obj-1" : [ "Size", "Size", 0 ],
-			"obj-52::obj-20" : [ "Diffusion", "Diffusion", 0 ],
-			"obj-52::obj-25" : [ "Damping", "Damping", 0 ],
-			"obj-52::obj-26" : [ "Decay", "Decay", 0 ],
-			"obj-52::obj-50" : [ "bypass", "bypass", 0 ],
-			"obj-52::obj-55" : [ "Mix", "Mix", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-12::obj-1" : 				{
-					"parameter_longname" : "Mix[1]"
-				}
-,
-				"obj-12::obj-7" : 				{
-					"parameter_longname" : "bypass[2]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "M4L.bal2~.maxpat",
-				"bootpath" : "C74:/patchers/m4l/Tools resources",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.cross1~.maxpat",
-				"bootpath" : "C74:/patchers/m4l/Tools resources",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "yafr2.maxpat",
-				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/effects/reverb/lib",
-				"patcherrelativepath" : "../../../../Library/Application Support/Cycling '74/Max 8/Examples/effects/reverb/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }

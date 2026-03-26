@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 460.0, 980.0, 634.0, 702.0 ],
+		"rect" : [ 460.0, 704.0, 634.0, 702.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -470,6 +470,19 @@
 						"assistshowspatchername" : 0,
 						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-63",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 476.5, 272.0, 208.0, 33.0 ],
+									"presentation_linecount" : 2,
+									"text" : "見えない蝶々モードを戻す時には\nCounter 1 7"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-38",
 									"maxclass" : "message",
@@ -1006,7 +1019,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "int" ],
 									"patching_rect" : [ 25.0, 288.0, 69.0, 22.0 ],
-									"text" : "counter 1 7"
+									"text" : "counter 1 6"
 								}
 
 							}
