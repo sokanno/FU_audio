@@ -177,8 +177,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 546.0, 185.0, 51.0, 22.0 ],
-					"text" : "butterfly",
+					"patching_rect" : [ 546.0, 185.0, 79.0, 22.0 ],
+					"text" : "twofus_synth",
 					"varname" : "hotaru[1]"
 				}
 
@@ -2520,18 +2520,18 @@
 			"obj-24::obj-45::obj-26" : [ "Decay[6]", "Decay", 0 ],
 			"obj-24::obj-45::obj-50" : [ "bypass[7]", "bypass", 0 ],
 			"obj-24::obj-45::obj-55" : [ "Mix[6]", "Mix", 0 ],
-			"obj-25::obj-16::obj-1" : [ "Size[3]", "Size", 0 ],
-			"obj-25::obj-16::obj-20" : [ "Diffusion[4]", "Diffusion", 0 ],
-			"obj-25::obj-16::obj-25" : [ "Damping[3]", "Damping", 0 ],
-			"obj-25::obj-16::obj-26" : [ "Decay[7]", "Decay", 0 ],
-			"obj-25::obj-16::obj-50" : [ "bypass[8]", "bypass", 0 ],
-			"obj-25::obj-16::obj-55" : [ "Mix[7]", "Mix", 0 ],
-			"obj-25::obj-50::obj-1" : [ "Size[5]", "Size", 0 ],
-			"obj-25::obj-50::obj-20" : [ "Diffusion[6]", "Diffusion", 0 ],
-			"obj-25::obj-50::obj-25" : [ "Damping[5]", "Damping", 0 ],
-			"obj-25::obj-50::obj-26" : [ "Decay[9]", "Decay", 0 ],
-			"obj-25::obj-50::obj-50" : [ "bypass[11]", "bypass", 0 ],
-			"obj-25::obj-50::obj-55" : [ "Mix[11]", "Mix", 0 ],
+			"obj-25::obj-4::obj-1" : [ "Size[3]", "Size", 0 ],
+			"obj-25::obj-4::obj-20" : [ "Diffusion[4]", "Diffusion", 0 ],
+			"obj-25::obj-4::obj-25" : [ "Damping[3]", "Damping", 0 ],
+			"obj-25::obj-4::obj-26" : [ "Decay[7]", "Decay", 0 ],
+			"obj-25::obj-4::obj-50" : [ "bypass[8]", "bypass", 0 ],
+			"obj-25::obj-4::obj-55" : [ "Mix[7]", "Mix", 0 ],
+			"obj-25::obj-50::obj-1" : [ "Size[4]", "Size", 0 ],
+			"obj-25::obj-50::obj-20" : [ "Diffusion[5]", "Diffusion", 0 ],
+			"obj-25::obj-50::obj-25" : [ "Damping[4]", "Damping", 0 ],
+			"obj-25::obj-50::obj-26" : [ "Decay[8]", "Decay", 0 ],
+			"obj-25::obj-50::obj-50" : [ "bypass[9]", "bypass", 0 ],
+			"obj-25::obj-50::obj-55" : [ "Mix[8]", "Mix", 0 ],
 			"obj-27" : [ "live.gain~[23]", "live.gain~[1]", 0 ],
 			"obj-2::obj-4::obj-1" : [ "Time", "Time", 0 ],
 			"obj-2::obj-4::obj-25" : [ "Cutoff", "Cutoff", 0 ],
@@ -2731,52 +2731,52 @@
 					"parameter_longname" : "Mix[6]"
 				}
 ,
-				"obj-25::obj-16::obj-1" : 				{
+				"obj-25::obj-4::obj-1" : 				{
 					"parameter_longname" : "Size[3]"
 				}
 ,
-				"obj-25::obj-16::obj-20" : 				{
+				"obj-25::obj-4::obj-20" : 				{
 					"parameter_longname" : "Diffusion[4]"
 				}
 ,
-				"obj-25::obj-16::obj-25" : 				{
+				"obj-25::obj-4::obj-25" : 				{
 					"parameter_longname" : "Damping[3]"
 				}
 ,
-				"obj-25::obj-16::obj-26" : 				{
+				"obj-25::obj-4::obj-26" : 				{
 					"parameter_longname" : "Decay[7]"
 				}
 ,
-				"obj-25::obj-16::obj-50" : 				{
+				"obj-25::obj-4::obj-50" : 				{
 					"parameter_longname" : "bypass[8]"
 				}
 ,
-				"obj-25::obj-16::obj-55" : 				{
+				"obj-25::obj-4::obj-55" : 				{
 					"parameter_longname" : "Mix[7]"
 				}
 ,
 				"obj-25::obj-50::obj-1" : 				{
-					"parameter_longname" : "Size[5]"
+					"parameter_longname" : "Size[4]"
 				}
 ,
 				"obj-25::obj-50::obj-20" : 				{
-					"parameter_longname" : "Diffusion[6]"
+					"parameter_longname" : "Diffusion[5]"
 				}
 ,
 				"obj-25::obj-50::obj-25" : 				{
-					"parameter_longname" : "Damping[5]"
+					"parameter_longname" : "Damping[4]"
 				}
 ,
 				"obj-25::obj-50::obj-26" : 				{
-					"parameter_longname" : "Decay[9]"
+					"parameter_longname" : "Decay[8]"
 				}
 ,
 				"obj-25::obj-50::obj-50" : 				{
-					"parameter_longname" : "bypass[11]"
+					"parameter_longname" : "bypass[9]"
 				}
 ,
 				"obj-25::obj-50::obj-55" : 				{
-					"parameter_longname" : "Mix[11]"
+					"parameter_longname" : "Mix[8]"
 				}
 ,
 				"obj-3::obj-2::obj-1" : 				{
@@ -2887,27 +2887,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "butterfly.maxpat",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "butterflypads.maxpat",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "buttparams.json",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "gyogun.maxpat",
 				"bootpath" : "~/works/25_FU/_dev/FU_audio",
 				"patcherrelativepath" : ".",
@@ -2943,13 +2922,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "scale_data.txt",
-				"bootpath" : "~/works/25_FU/_dev/FU_audio",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "shimmer.maxpat",
 				"bootpath" : "~/works/25_FU/_dev/FU_audio",
 				"patcherrelativepath" : ".",
@@ -2979,6 +2951,13 @@
 			}
 , 			{
 				"name" : "tenjotengo.maxpat",
+				"bootpath" : "~/works/25_FU/_dev/FU_audio",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "twofus_synth.maxpat",
 				"bootpath" : "~/works/25_FU/_dev/FU_audio",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
