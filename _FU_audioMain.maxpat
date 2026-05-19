@@ -475,7 +475,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 671.200010001659393, 660.800009846687317, 25.0, 22.0 ],
-									"text" : "s u"
+									"text" : "s b"
 								}
 
 							}
@@ -486,7 +486,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 660.800009846687317, 25.0, 22.0 ],
-									"text" : "s u"
+									"text" : "s b"
 								}
 
 							}
