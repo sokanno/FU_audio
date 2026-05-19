@@ -1856,18 +1856,6 @@
 			{
 				"patchline": {
 					"destination": [
-						"obj-4",
-						0
-					],
-					"source": [
-						"obj-37",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
 						"obj-8",
 						0
 					],
@@ -2233,6 +2221,18 @@
 					],
 					"source": [
 						"obj-111",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-37",
+						0
+					],
+					"destination": [
+						"obj-4",
 						0
 					]
 				}

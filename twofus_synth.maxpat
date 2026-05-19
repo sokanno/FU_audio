@@ -148,11 +148,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "F2 = 87.31 Hz  RGB L0.419 R0.908"
+									"text" : "F2 = 87.31 Hz  RGB(Blue=RingMod×1.51) L0.419 R0.908"
 								}
 
 							}
@@ -416,19 +417,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 87.31"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -560,6 +548,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 87.31"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 131.84"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -577,8 +613,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -756,13 +820,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -927,11 +984,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "G2 = 98.0 Hz  RGB L0.619 R0.785"
+									"text" : "G2 = 98.0 Hz  RGB(Blue=RingMod×1.51) L0.619 R0.785"
 								}
 
 							}
@@ -1194,18 +1252,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 98."
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -1336,6 +1382,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 98."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 147.98"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -1353,8 +1447,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -1532,13 +1654,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -1703,11 +1818,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Ab2 = 103.83 Hz  RGB L0.785 R0.619"
+									"text" : "Ab2 = 103.83 Hz  RGB(Blue=RingMod×2.13) L0.785 R0.619"
 								}
 
 							}
@@ -1972,19 +2088,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 103.83"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -2116,6 +2219,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 103.83"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 221.16"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -2133,8 +2284,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -2312,13 +2491,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -2483,11 +2655,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Bb2 = 116.54 Hz  RGB L0.908 R0.419"
+									"text" : "Bb2 = 116.54 Hz  RGB(Blue=RingMod×1.71) L0.908 R0.419"
 								}
 
 							}
@@ -2752,19 +2925,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 116.54"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -2896,6 +3056,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 116.54"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 199.28"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -2913,8 +3121,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -3092,13 +3328,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -3263,11 +3492,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "C3 = 130.81 Hz  RGB L0.309 R0.951"
+									"text" : "C3 = 130.81 Hz  RGB(Blue=RingMod×1.71) L0.309 R0.951"
 								}
 
 							}
@@ -3532,19 +3762,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 130.81"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -3676,6 +3893,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 130.8"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 223.68"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -3693,8 +3958,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -3872,13 +4165,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -4043,11 +4329,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "D3 = 146.83 Hz  RGB L0.522 R0.853"
+									"text" : "D3 = 146.83 Hz  RGB(Blue=RingMod×1.71) L0.522 R0.853"
 								}
 
 							}
@@ -4312,19 +4599,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 146.83"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -4456,6 +4730,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 146.82"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 251.06"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -4473,8 +4795,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -4652,13 +5002,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -4823,11 +5166,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Eb3 = 155.56 Hz  RGB L0.707 R0.707"
+									"text" : "Eb3 = 155.56 Hz  RGB(Blue=RingMod×1.51) L0.707 R0.707"
 								}
 
 							}
@@ -5092,19 +5436,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 155.56"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -5236,6 +5567,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 155.57"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 234.91"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -5253,8 +5632,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -5432,13 +5839,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -5603,11 +6003,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "F3 = 174.61 Hz  RGB L0.853 R0.522"
+									"text" : "F3 = 174.61 Hz  RGB(Blue=RingMod×3.07) L0.853 R0.522"
 								}
 
 							}
@@ -5872,19 +6273,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 174.61"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -6016,6 +6404,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 174.61"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 536.06"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -6033,8 +6469,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -6212,13 +6676,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -6383,11 +6840,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "G3 = 196.0 Hz  RGB L0.951 R0.309"
+									"text" : "G3 = 196.0 Hz  RGB(Blue=RingMod×1.51) L0.951 R0.309"
 								}
 
 							}
@@ -6650,18 +7108,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 196."
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -6792,6 +7238,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 196."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 295.96"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -6809,8 +7303,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -6988,13 +7510,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -7159,11 +7674,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Ab3 = 207.65 Hz  RGB L0.419 R0.908"
+									"text" : "Ab3 = 207.65 Hz  RGB(Blue=RingMod×3.07) L0.419 R0.908"
 								}
 
 							}
@@ -7427,19 +7943,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 207.65"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -7571,6 +8074,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 207.64"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 637.46"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -7588,8 +8139,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -7767,13 +8346,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -7938,11 +8510,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Bb3 = 233.08 Hz  RGB L0.619 R0.785"
+									"text" : "Bb3 = 233.08 Hz  RGB(Blue=RingMod×2.51) L0.619 R0.785"
 								}
 
 							}
@@ -8207,19 +8780,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 233.08"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -8351,6 +8911,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 233.1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 585.08"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -8368,8 +8976,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -8547,13 +9183,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -8718,11 +9347,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "C4 = 261.63 Hz  RGB L0.785 R0.619"
+									"text" : "C4 = 261.63 Hz  RGB(Blue=RingMod×1.51) L0.785 R0.619"
 								}
 
 							}
@@ -8987,19 +9617,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 261.63"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -9131,6 +9748,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 261.64"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 395.08"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -9148,8 +9813,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -9327,13 +10020,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -9498,11 +10184,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "D4 = 293.66 Hz  RGB L0.908 R0.419"
+									"text" : "D4 = 293.66 Hz  RGB(Blue=RingMod×1.51) L0.908 R0.419"
 								}
 
 							}
@@ -9767,19 +10454,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 293.66"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -9911,6 +10585,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 293.69"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 443.47"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -9928,8 +10650,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -10107,13 +10857,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -10278,11 +11021,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Eb4 = 311.13 Hz  RGB L0.309 R0.951"
+									"text" : "Eb4 = 311.13 Hz  RGB(Blue=RingMod×1.51) L0.309 R0.951"
 								}
 
 							}
@@ -10547,19 +11291,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 311.13"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -10691,6 +11422,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 311.14"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 469.82"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -10708,8 +11487,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -10887,13 +11694,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -11058,11 +11858,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "F4 = 349.23 Hz  RGB L0.522 R0.853"
+									"text" : "F4 = 349.23 Hz  RGB(Blue=RingMod×1.71) L0.522 R0.853"
 								}
 
 							}
@@ -11327,19 +12128,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 349.23"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -11471,6 +12259,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 349.28"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 597.28"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -11488,8 +12324,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -11667,13 +12531,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -11838,11 +12695,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "G4 = 392.0 Hz  RGB L0.707 R0.707"
+									"text" : "G4 = 392.0 Hz  RGB(Blue=RingMod×1.71) L0.707 R0.707"
 								}
 
 							}
@@ -12105,18 +12963,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 392."
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -12248,6 +13094,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 392."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 670.33"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -12265,8 +13159,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -12444,13 +13366,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -12615,11 +13530,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Ab4 = 415.3 Hz  RGB L0.419 R0.908"
+									"text" : "Ab4 = 415.3 Hz  RGB(Blue=RingMod×3.07) L0.419 R0.908"
 								}
 
 							}
@@ -12882,19 +13798,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 415.3"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -13026,6 +13929,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 415.28"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1274.92"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -13043,8 +13994,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -13222,13 +14201,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -13393,11 +14365,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Bb4 = 466.16 Hz  RGB L0.619 R0.785"
+									"text" : "Bb4 = 466.16 Hz  RGB(Blue=RingMod×3.07) L0.619 R0.785"
 								}
 
 							}
@@ -13662,19 +14635,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 466.16"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -13806,6 +14766,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 466.2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1431.24"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -13823,8 +14831,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -14002,13 +15038,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -14173,11 +15202,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "C5 = 523.25 Hz  RGB L0.785 R0.619"
+									"text" : "C5 = 523.25 Hz  RGB(Blue=RingMod×1.51) L0.785 R0.619"
 								}
 
 							}
@@ -14442,19 +15472,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 523.25"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -14586,6 +15603,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 523.29"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 790.16"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -14603,8 +15668,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -14782,13 +15875,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -14953,11 +16039,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "D5 = 587.33 Hz  RGB L0.908 R0.419"
+									"text" : "D5 = 587.33 Hz  RGB(Blue=RingMod×3.07) L0.908 R0.419"
 								}
 
 							}
@@ -15222,19 +16309,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 587.33"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -15366,6 +16440,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 587.2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1802.7"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -15383,8 +16505,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -15562,13 +16712,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -15733,11 +16876,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Eb5 = 622.25 Hz  RGB L0.309 R0.951"
+									"text" : "Eb5 = 622.25 Hz  RGB(Blue=RingMod×1.71) L0.309 R0.951"
 								}
 
 							}
@@ -16002,19 +17146,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 622.25"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -16145,6 +17276,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 622.28"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1064.09"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -16162,8 +17341,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -16341,13 +17548,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -16512,11 +17712,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "F5 = 698.46 Hz  RGB L0.522 R0.853"
+									"text" : "F5 = 698.46 Hz  RGB(Blue=RingMod×3.07) L0.522 R0.853"
 								}
 
 							}
@@ -16781,19 +17982,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 698.46"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -16924,6 +18112,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 698.32"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 2143.85"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -16941,8 +18177,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -17120,13 +18384,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -17291,11 +18548,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "G5 = 783.99 Hz  RGB L0.707 R0.707"
+									"text" : "G5 = 783.99 Hz  RGB(Blue=RingMod×2.51) L0.707 R0.707"
 								}
 
 							}
@@ -17560,19 +18818,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 783.99"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -17703,6 +18948,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 783.7"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1967.08"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -17720,8 +19013,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -17899,13 +19220,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -18070,11 +19384,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Ab5 = 830.61 Hz  RGB L0.853 R0.522"
+									"text" : "Ab5 = 830.61 Hz  RGB(Blue=RingMod×1.71) L0.853 R0.522"
 								}
 
 							}
@@ -18339,19 +19654,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 830.61"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -18482,6 +19784,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 830.56"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1420.27"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -18499,8 +19849,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -18678,13 +20056,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -18849,11 +20220,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Bb5 = 932.33 Hz  RGB L0.951 R0.309"
+									"text" : "Bb5 = 932.33 Hz  RGB(Blue=RingMod×2.51) L0.951 R0.309"
 								}
 
 							}
@@ -19118,19 +20490,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 932.33"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -19261,6 +20620,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 931.97"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 2339.24"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -19278,8 +20685,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -19457,13 +20892,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -19628,11 +21056,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "C6 = 1046.5 Hz  RGB L0.419 R0.908"
+									"text" : "C6 = 1046.5 Hz  RGB(Blue=RingMod×3.07) L0.419 R0.908"
 								}
 
 							}
@@ -19896,19 +21325,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 1046.5"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -20039,6 +21455,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1046.03"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 3211.3"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -20056,8 +21520,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -20235,13 +21727,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -20406,11 +21891,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "D6 = 1174.66 Hz  RGB L0.619 R0.785"
+									"text" : "D6 = 1174.66 Hz  RGB(Blue=RingMod×2.13) L0.619 R0.785"
 								}
 
 							}
@@ -20676,19 +22162,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 1174.66"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -20819,6 +22292,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1175.09"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 2502.94"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -20836,8 +22357,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -21015,13 +22564,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -21186,11 +22728,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "Eb6 = 1244.51 Hz  RGB L0.785 R0.619"
+									"text" : "Eb6 = 1244.51 Hz  RGB(Blue=RingMod×1.51) L0.785 R0.619"
 								}
 
 							}
@@ -21456,19 +22999,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 1244.51"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -21599,6 +23129,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1243.78"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1878.11"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -21616,8 +23194,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -21795,13 +23401,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-b-sig", 0 ],
 									"source" : [ "obj-unpack", 4 ]
 								}
@@ -21966,11 +23565,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-comment",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 50.0, 280.0, 22.0 ],
-									"text" : "F6 = 1396.91 Hz  RGB L0.908 R0.419"
+									"text" : "F6 = 1396.91 Hz  RGB(Blue=RingMod×1.71) L0.908 R0.419"
 								}
 
 							}
@@ -22236,19 +23836,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-sine",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 380.0, 300.0, 70.0, 22.0 ],
-									"text" : "cycle~ 1396.91"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-blue-mul",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -22379,6 +23966,54 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-vol",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 380.0, 356.0, 55.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-carrier",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 360.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 1396.65"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-mod",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 490.0, 276.0, 100.0, 22.0 ],
+									"text" : "cycle~ 2388.27"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-blue-ring",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 410.0, 316.0, 32.0, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -22396,8 +24031,36 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 0 ],
+									"source" : [ "obj-blue-carrier", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-ring", 1 ],
+									"source" : [ "obj-blue-mod", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-mix2", 1 ],
 									"source" : [ "obj-blue-mul", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-vol", 0 ],
+									"source" : [ "obj-blue-ring", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-blue-mul", 0 ],
+									"source" : [ "obj-blue-vol", 0 ]
 								}
 
 							}
@@ -22570,13 +24233,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-mix1", 0 ],
 									"source" : [ "obj-red-mul", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-blue-mul", 0 ],
-									"source" : [ "obj-sine", 0 ]
 								}
 
 							}
@@ -23422,8 +25078,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 656.0, 603.0, 80.0, 22.0 ],
-					"text" : "loadmess 0.1"
+					"patching_rect" : [ 656.0, 603.0, 87.0, 22.0 ],
+					"text" : "loadmess 0.03"
 				}
 
 			}
@@ -23499,7 +25155,7 @@
 					"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 771.0, 489.0, 360.0, 155.0 ],
-					"setfilter" : [ 0, 3, 1, 0, 0, 1350.0, 0.370000004768372, 1.600000023841858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+					"setfilter" : [ 0, 3, 1, 0, 0, 2472.779541015625, 0.303369879722595, 1.302138447761536, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 					"varname" : "filtergraph~"
 				}
 
@@ -23611,13 +25267,13 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 810.0, 120.0, 145.0, 22.0 ],
 					"restore" : 					{
-						"filtergraph~" : [ 1, 0, 3, 1, 0, 0, 1350.0, 0.370000004768372, 1.600000023841858 ],
+						"filtergraph~" : [ 1, 0, 3, 1, 0, 0, 2472.779541015625, 0.303369879722595, 1.302138447761536 ],
 						"gain~" : [ 120 ],
 						"gain~[1]" : [ 120 ]
 					}
 ,
 					"text" : "autopattr @autoname 1",
-					"varname" : "u508003315"
+					"varname" : "u423005451"
 				}
 
 			}
@@ -26169,7 +27825,7 @@
 , 			{
 				"name" : "yafr2.maxpat",
 				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/effects/reverb/lib",
-				"patcherrelativepath" : "../../../../Library/Application Support/Cycling '74/Max 8/Examples/effects/reverb/lib",
+				"patcherrelativepath" : "../../../../../../Library/Application Support/Cycling '74/Max 8/Examples/effects/reverb/lib",
 				"type" : "JSON",
 				"implicit" : 1
 			}
