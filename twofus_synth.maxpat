@@ -40366,437 +40366,774 @@
 			},
 			{
 				"box": {
-					"id": "obj-bgm-label",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						500,
-						370,
-						250,
-						22
-					],
-					"text": "=== BGM: Interstellar (loop + fade) ==="
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-bang",
+					"id": "obj-bgm",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": [
-						"bang",
-						"bang"
+						"signal",
+						"signal"
 					],
 					"patching_rect": [
 						500,
-						400,
-						65,
-						22
-					],
-					"text": "t b b"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-timer-stop",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						500,
-						435,
-						40,
-						22
-					],
-					"text": "stop"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-timer-start",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						550,
-						435,
-						80,
-						22
-					],
-					"text": "10000"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-delay",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"patching_rect": [
-						500,
-						465,
-						72,
-						22
-					],
-					"text": "delay 10000"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-stop-msg",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						500,
-						495,
-						32,
-						22
-					],
-					"text": "0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-playing",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"patching_rect": [
-						640,
-						435,
-						32,
-						22
-					],
-					"text": "i 0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-gate",
-					"maxclass": "newobj",
-					"numinlets": 3,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"patching_rect": [
-						640,
-						465,
-						55,
-						22
-					],
-					"text": "sel 0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-start-msg",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						640,
-						495,
-						20,
-						22
-					],
-					"text": "1"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-open",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						700,
-						495,
+						680,
 						200,
 						22
 					],
-					"text": "open Interstellar.mp3, loop 1"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-loadbang",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"patching_rect": [
-						700,
-						465,
-						58,
-						22
-					],
-					"text": "loadbang"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-sfplay",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 3,
-					"outlettype": [
-						"signal",
-						"signal",
-						"bang"
-					],
-					"patching_rect": [
-						640,
-						530,
-						100,
-						22
-					],
-					"text": "sfplay~ 2"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-set1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						680,
-						435,
-						20,
-						22
-					],
-					"text": "1"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-set0",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						760,
-						530,
-						20,
-						22
-					],
-					"text": "0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-fade-in",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						640,
-						565,
-						55,
-						22
-					],
-					"text": "1. 3000"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-fade-out",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						500,
-						530,
-						55,
-						22
-					],
-					"text": "0. 1000"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-stop-delay",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"patching_rect": [
-						500,
-						565,
-						72,
-						22
-					],
-					"text": "delay 1000"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-stop-final",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						500,
-						595,
-						20,
-						22
-					],
-					"text": "0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-line",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 2,
-					"outlettype": [
-						"signal",
-						"bang"
-					],
-					"patching_rect": [
-						640,
-						600,
-						42,
-						22
-					],
-					"text": "line~ 0."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-vol-l",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"signal"
-					],
-					"patching_rect": [
-						640,
-						640,
-						32,
-						22
-					],
-					"text": "*~"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-vol-r",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"signal"
-					],
-					"patching_rect": [
-						750,
-						640,
-						32,
-						22
-					],
-					"text": "*~"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-master-vol",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						640,
-						675,
-						72,
-						22
-					],
-					"text": "loadmess 0.15"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-gain-l",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"signal"
-					],
-					"patching_rect": [
-						640,
-						705,
-						40,
-						22
-					],
-					"text": "*~ 0."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-bgm-gain-r",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"signal"
-					],
-					"patching_rect": [
-						750,
-						705,
-						40,
-						22
-					],
-					"text": "*~ 0."
+					"text": "p bgm_interstellar",
+					"patcher": {
+						"fileversion": 1,
+						"appversion": {
+							"major": 8,
+							"minor": 6,
+							"revision": 4,
+							"architecture": "x64",
+							"modernui": 1
+						},
+						"classnamespace": "box",
+						"rect": [
+							100,
+							100,
+							700,
+							550
+						],
+						"bglocked": 0,
+						"openinpresentation": 0,
+						"default_fontsize": 12.0,
+						"default_fontface": 0,
+						"default_fontname": "Arial",
+						"gridonopen": 1,
+						"gridsize": [
+							15.0,
+							15.0
+						],
+						"gridsnaponopen": 1,
+						"objectsnaponopen": 1,
+						"statusbarvisible": 2,
+						"toolbarvisible": 1,
+						"lefttoolbarpinned": 0,
+						"toptoolbarpinned": 0,
+						"righttoolbarpinned": 0,
+						"bottomtoolbarpinned": 0,
+						"toolbars_unpinned_last_save": 0,
+						"tallnewobj": 0,
+						"boxanimatetime": 200,
+						"enablehscroll": 1,
+						"enablevscroll": 1,
+						"devicewidth": 0.0,
+						"description": "",
+						"digest": "",
+						"tags": "",
+						"style": "",
+						"subpatcher_template": "",
+						"assistshowspatchername": 0,
+						"boxes": [
+							{
+								"box": {
+									"comment": "any OSC msg",
+									"id": "obj-in",
+									"index": 1,
+									"maxclass": "inlet",
+									"numinlets": 0,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										50,
+										20,
+										30,
+										30
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-tbb",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 2,
+									"outlettype": [
+										"bang",
+										"bang"
+									],
+									"patching_rect": [
+										50,
+										70,
+										65,
+										22
+									],
+									"text": "t b b"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-silence",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"bang"
+									],
+									"patching_rect": [
+										50,
+										120,
+										72,
+										22
+									],
+									"text": "delay 10000"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-fadeout-msg",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										50,
+										160,
+										55,
+										22
+									],
+									"text": "0. 1500"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-stop-wait",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"bang"
+									],
+									"patching_rect": [
+										50,
+										200,
+										72,
+										22
+									],
+									"text": "delay 1500"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-t-stop",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 2,
+									"outlettype": [
+										"bang",
+										"bang"
+									],
+									"patching_rect": [
+										50,
+										240,
+										65,
+										22
+									],
+									"text": "t b b"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-stop-sf",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										50,
+										280,
+										20,
+										22
+									],
+									"text": "0"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-set-notplaying",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										120,
+										280,
+										20,
+										22
+									],
+									"text": "0"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-onebang",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"outlettype": [
+										"bang",
+										"bang"
+									],
+									"patching_rect": [
+										200,
+										120,
+										60,
+										22
+									],
+									"text": "onebang"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-start-sf",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										200,
+										160,
+										20,
+										22
+									],
+									"text": "1"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-fadein-msg",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										240,
+										160,
+										55,
+										22
+									],
+									"text": "1. 3000"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-loadbang",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 1,
+									"outlettype": [
+										"bang"
+									],
+									"patching_rect": [
+										400,
+										70,
+										58,
+										22
+									],
+									"text": "loadbang"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-open",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										400,
+										110,
+										200,
+										22
+									],
+									"text": "open Interstellar.mp3, loop 1"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-sf",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 3,
+									"outlettype": [
+										"signal",
+										"signal",
+										"bang"
+									],
+									"patching_rect": [
+										200,
+										210,
+										100,
+										22
+									],
+									"text": "sfplay~ 2"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-line",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"outlettype": [
+										"signal",
+										"bang"
+									],
+									"patching_rect": [
+										350,
+										210,
+										45,
+										22
+									],
+									"text": "line~ 0."
+								}
+							},
+							{
+								"box": {
+									"id": "obj-mul-l",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"signal"
+									],
+									"patching_rect": [
+										200,
+										260,
+										32,
+										22
+									],
+									"text": "*~"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-mul-r",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"signal"
+									],
+									"patching_rect": [
+										270,
+										260,
+										32,
+										22
+									],
+									"text": "*~"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-vol-l",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"signal"
+									],
+									"patching_rect": [
+										200,
+										310,
+										55,
+										22
+									],
+									"text": "*~ 0.15"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-vol-r",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"signal"
+									],
+									"patching_rect": [
+										270,
+										310,
+										55,
+										22
+									],
+									"text": "*~ 0.15"
+								}
+							},
+							{
+								"box": {
+									"comment": "L out",
+									"id": "obj-out-l",
+									"index": 1,
+									"maxclass": "outlet",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"patching_rect": [
+										200,
+										370,
+										30,
+										30
+									]
+								}
+							},
+							{
+								"box": {
+									"comment": "R out",
+									"id": "obj-out-r",
+									"index": 2,
+									"maxclass": "outlet",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"patching_rect": [
+										270,
+										370,
+										30,
+										30
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-label",
+									"maxclass": "comment",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"patching_rect": [
+										150,
+										20,
+										350,
+										22
+									],
+									"text": "BGM: Interstellar.mp3 — 3s fade-in, 10s silence → 1.5s fade-out"
+								}
+							}
+						],
+						"lines": [
+							{
+								"patchline": {
+									"source": [
+										"obj-in",
+										0
+									],
+									"destination": [
+										"obj-tbb",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-tbb",
+										0
+									],
+									"destination": [
+										"obj-silence",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-tbb",
+										1
+									],
+									"destination": [
+										"obj-onebang",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-onebang",
+										0
+									],
+									"destination": [
+										"obj-start-sf",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-onebang",
+										0
+									],
+									"destination": [
+										"obj-fadein-msg",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-start-sf",
+										0
+									],
+									"destination": [
+										"obj-sf",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-fadein-msg",
+										0
+									],
+									"destination": [
+										"obj-line",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-silence",
+										0
+									],
+									"destination": [
+										"obj-fadeout-msg",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-silence",
+										0
+									],
+									"destination": [
+										"obj-stop-wait",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-fadeout-msg",
+										0
+									],
+									"destination": [
+										"obj-line",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-stop-wait",
+										0
+									],
+									"destination": [
+										"obj-t-stop",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-t-stop",
+										0
+									],
+									"destination": [
+										"obj-stop-sf",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-t-stop",
+										1
+									],
+									"destination": [
+										"obj-set-notplaying",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-stop-sf",
+										0
+									],
+									"destination": [
+										"obj-sf",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-set-notplaying",
+										0
+									],
+									"destination": [
+										"obj-onebang",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-loadbang",
+										0
+									],
+									"destination": [
+										"obj-open",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-open",
+										0
+									],
+									"destination": [
+										"obj-sf",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-sf",
+										0
+									],
+									"destination": [
+										"obj-mul-l",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-sf",
+										1
+									],
+									"destination": [
+										"obj-mul-r",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-line",
+										0
+									],
+									"destination": [
+										"obj-mul-l",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-line",
+										0
+									],
+									"destination": [
+										"obj-mul-r",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-mul-l",
+										0
+									],
+									"destination": [
+										"obj-vol-l",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-mul-r",
+										0
+									],
+									"destination": [
+										"obj-vol-r",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-vol-l",
+										0
+									],
+									"destination": [
+										"obj-out-l",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-vol-r",
+										0
+									],
+									"destination": [
+										"obj-out-r",
+										0
+									]
+								}
+							}
+						]
+					},
+					"saved_object_attributes": {
+						"description": "",
+						"digest": "",
+						"globalpatchername": "",
+						"tags": ""
+					}
 				}
 			}
 		],
@@ -43559,7 +43896,7 @@
 						0
 					],
 					"destination": [
-						"obj-bgm-bang",
+						"obj-bgm",
 						0
 					]
 				}
@@ -43567,367 +43904,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-bgm-bang",
-						0
-					],
-					"destination": [
-						"obj-bgm-timer-stop",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-bang",
-						0
-					],
-					"destination": [
-						"obj-bgm-timer-start",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-timer-stop",
-						0
-					],
-					"destination": [
-						"obj-bgm-delay",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-timer-start",
-						0
-					],
-					"destination": [
-						"obj-bgm-delay",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-delay",
-						0
-					],
-					"destination": [
-						"obj-bgm-fade-out",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-delay",
-						0
-					],
-					"destination": [
-						"obj-bgm-stop-delay",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-fade-out",
-						0
-					],
-					"destination": [
-						"obj-bgm-line",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-stop-delay",
-						0
-					],
-					"destination": [
-						"obj-bgm-stop-final",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-stop-final",
-						0
-					],
-					"destination": [
-						"obj-bgm-sfplay",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-stop-final",
-						0
-					],
-					"destination": [
-						"obj-bgm-set0",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-set0",
-						0
-					],
-					"destination": [
-						"obj-bgm-playing",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-bang",
-						1
-					],
-					"destination": [
-						"obj-bgm-playing",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-playing",
-						0
-					],
-					"destination": [
-						"obj-bgm-gate",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-gate",
-						0
-					],
-					"destination": [
-						"obj-bgm-start-msg",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-start-msg",
-						0
-					],
-					"destination": [
-						"obj-bgm-sfplay",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-start-msg",
-						0
-					],
-					"destination": [
-						"obj-bgm-set1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-set1",
-						0
-					],
-					"destination": [
-						"obj-bgm-playing",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-start-msg",
-						0
-					],
-					"destination": [
-						"obj-bgm-fade-in",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-fade-in",
-						0
-					],
-					"destination": [
-						"obj-bgm-line",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-loadbang",
-						0
-					],
-					"destination": [
-						"obj-bgm-open",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-open",
-						0
-					],
-					"destination": [
-						"obj-bgm-sfplay",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-sfplay",
-						2
-					],
-					"destination": [
-						"obj-bgm-set0",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-sfplay",
-						0
-					],
-					"destination": [
-						"obj-bgm-vol-l",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-sfplay",
-						1
-					],
-					"destination": [
-						"obj-bgm-vol-r",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-line",
-						0
-					],
-					"destination": [
-						"obj-bgm-vol-l",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-line",
-						0
-					],
-					"destination": [
-						"obj-bgm-vol-r",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-vol-l",
-						0
-					],
-					"destination": [
-						"obj-bgm-gain-l",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-vol-r",
-						0
-					],
-					"destination": [
-						"obj-bgm-gain-r",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-master-vol",
-						0
-					],
-					"destination": [
-						"obj-bgm-gain-l",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-master-vol",
-						0
-					],
-					"destination": [
-						"obj-bgm-gain-r",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm-gain-l",
+						"obj-bgm",
 						0
 					],
 					"destination": [
@@ -43939,8 +43916,8 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-bgm-gain-r",
-						0
+						"obj-bgm",
+						1
 					],
 					"destination": [
 						"obj-dac",
