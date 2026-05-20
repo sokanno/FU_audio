@@ -40452,24 +40452,6 @@
 									"id": "obj-bang",
 									"maxclass": "newobj",
 									"numinlets": 1,
-									"numoutlets": 1,
-									"outlettype": [
-										"bang"
-									],
-									"patching_rect": [
-										50,
-										70,
-										45,
-										22
-									],
-									"text": "t bang"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-tbb",
-									"maxclass": "newobj",
-									"numinlets": 1,
 									"numoutlets": 2,
 									"outlettype": [
 										"bang",
@@ -40477,7 +40459,7 @@
 									],
 									"patching_rect": [
 										50,
-										110,
+										70,
 										65,
 										22
 									],
@@ -40495,7 +40477,7 @@
 									],
 									"patching_rect": [
 										50,
-										160,
+										120,
 										80,
 										22
 									],
@@ -40513,119 +40495,11 @@
 									],
 									"patching_rect": [
 										50,
-										200,
+										160,
 										55,
 										22
 									],
 									"text": "0. 1500"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-stopwait",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"bang"
-									],
-									"patching_rect": [
-										50,
-										240,
-										80,
-										22
-									],
-									"text": "delay 1500"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-stop",
-									"maxclass": "message",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										""
-									],
-									"patching_rect": [
-										50,
-										280,
-										20,
-										22
-									],
-									"text": "0"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-open-gate",
-									"maxclass": "message",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										""
-									],
-									"patching_rect": [
-										130,
-										280,
-										20,
-										22
-									],
-									"text": "1"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-gate",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"bang"
-									],
-									"patching_rect": [
-										220,
-										160,
-										55,
-										22
-									],
-									"text": "gate 1 1"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-close-gate",
-									"maxclass": "message",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										""
-									],
-									"patching_rect": [
-										300,
-										160,
-										20,
-										22
-									],
-									"text": "0"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-start",
-									"maxclass": "message",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										""
-									],
-									"patching_rect": [
-										220,
-										200,
-										20,
-										22
-									],
-									"text": "1"
 								}
 							},
 							{
@@ -40638,12 +40512,31 @@
 										""
 									],
 									"patching_rect": [
-										260,
 										200,
+										120,
 										55,
 										22
 									],
 									"text": "1. 3000"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-line",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"outlettype": [
+										"signal",
+										"bang"
+									],
+									"patching_rect": [
+										130,
+										200,
+										45,
+										22
+									],
+									"text": "line~ 0."
 								}
 							},
 							{
@@ -40656,8 +40549,8 @@
 										"bang"
 									],
 									"patching_rect": [
-										450,
-										110,
+										350,
+										70,
 										58,
 										22
 									],
@@ -40674,12 +40567,30 @@
 										""
 									],
 									"patching_rect": [
-										450,
-										150,
+										350,
+										110,
 										200,
 										22
 									],
 									"text": "open Interstellar.mp3, loop 1"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-start",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										350,
+										150,
+										20,
+										22
+									],
+									"text": "1"
 								}
 							},
 							{
@@ -40694,31 +40605,12 @@
 										"bang"
 									],
 									"patching_rect": [
-										220,
-										260,
+										350,
+										190,
 										100,
 										22
 									],
 									"text": "sfplay~ 2"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-line",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 2,
-									"outlettype": [
-										"signal",
-										"bang"
-									],
-									"patching_rect": [
-										370,
-										260,
-										45,
-										22
-									],
-									"text": "line~ 0."
 								}
 							},
 							{
@@ -40731,8 +40623,8 @@
 										"signal"
 									],
 									"patching_rect": [
-										220,
-										310,
+										200,
+										260,
 										32,
 										22
 									],
@@ -40749,8 +40641,8 @@
 										"signal"
 									],
 									"patching_rect": [
-										300,
-										310,
+										290,
+										260,
 										32,
 										22
 									],
@@ -40767,8 +40659,8 @@
 										"signal"
 									],
 									"patching_rect": [
-										220,
-										360,
+										200,
+										310,
 										55,
 										22
 									],
@@ -40785,8 +40677,8 @@
 										"signal"
 									],
 									"patching_rect": [
-										300,
-										360,
+										290,
+										310,
 										55,
 										22
 									],
@@ -40802,8 +40694,8 @@
 									"numinlets": 1,
 									"numoutlets": 0,
 									"patching_rect": [
-										220,
-										420,
+										200,
+										370,
 										30,
 										30
 									]
@@ -40818,8 +40710,8 @@
 									"numinlets": 1,
 									"numoutlets": 0,
 									"patching_rect": [
-										300,
-										420,
+										290,
+										370,
 										30,
 										30
 									]
@@ -40834,10 +40726,10 @@
 									"patching_rect": [
 										100,
 										20,
-										400,
+										450,
 										22
 									],
-									"text": "BGM: Interstellar.mp3 | 3s fade-in | 10s silence -> 1.5s fade-out + stop"
+									"text": "BGM: Interstellar.mp3 | always looping | volume: fade-in 3s / fade-out 1.5s"
 								}
 							}
 						],
@@ -40861,18 +40753,6 @@
 										0
 									],
 									"destination": [
-										"obj-tbb",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-tbb",
-										0
-									],
-									"destination": [
 										"obj-silence",
 										0
 									]
@@ -40881,71 +40761,11 @@
 							{
 								"patchline": {
 									"source": [
-										"obj-tbb",
+										"obj-bang",
 										1
-									],
-									"destination": [
-										"obj-gate",
-										1
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-gate",
-										0
-									],
-									"destination": [
-										"obj-start",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-gate",
-										0
 									],
 									"destination": [
 										"obj-fadein",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-gate",
-										0
-									],
-									"destination": [
-										"obj-close-gate",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-close-gate",
-										0
-									],
-									"destination": [
-										"obj-gate",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-start",
-										0
-									],
-									"destination": [
-										"obj-sf",
 										0
 									]
 								}
@@ -40977,71 +40797,11 @@
 							{
 								"patchline": {
 									"source": [
-										"obj-silence",
-										0
-									],
-									"destination": [
-										"obj-stopwait",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
 										"obj-fadeout",
 										0
 									],
 									"destination": [
 										"obj-line",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-stopwait",
-										0
-									],
-									"destination": [
-										"obj-stop",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-stopwait",
-										0
-									],
-									"destination": [
-										"obj-open-gate",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-stop",
-										0
-									],
-									"destination": [
-										"obj-sf",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"source": [
-										"obj-open-gate",
-										0
-									],
-									"destination": [
-										"obj-gate",
 										0
 									]
 								}
@@ -41062,6 +40822,30 @@
 								"patchline": {
 									"source": [
 										"obj-open-file",
+										0
+									],
+									"destination": [
+										"obj-sf",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-loadbang",
+										0
+									],
+									"destination": [
+										"obj-start",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-start",
 										0
 									],
 									"destination": [
