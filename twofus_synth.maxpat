@@ -25058,7 +25058,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 810.0, 91.0, 76.0, 76.0 ],
+					"patching_rect" : [ 810.0, 91.0, 79.0, 76.0 ],
 					"saved_object_attributes" : 					{
 						"client_rect" : [ 4, 44, 358, 172 ],
 						"parameter_enable" : 0,
@@ -26301,8 +26301,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 430.0, 111.0, 200.0, 22.0 ],
-									"text" : "open Interstellar.mp3, loop 1"
+									"patching_rect" : [ 430.0, 111.0, 157.0, 22.0 ],
+									"text" : "open Interstellar.wav, loop 1"
 								}
 
 							}
