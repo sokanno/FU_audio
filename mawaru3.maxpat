@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 2578.0, 186.0, 1356.0, 808.0 ],
+		"rect" : [ 134.0, 159.0, 1356.0, 1124.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -316,7 +316,7 @@
 					"patching_rect" : [ 343.5, 514.0, 129.0, 39.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ -70 ],
+							"parameter_initial" : [ -7.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "live.gain~[1]",
 							"parameter_mmax" : 6.0,
@@ -449,25 +449,25 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "ch2 FR",
 					"id" : "obj-9",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 91.0, 624.0, 30.0, 30.0 ]
+					"patching_rect" : [ 66.0, 673.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "ch1 FL",
 					"id" : "obj-4",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 46.0, 624.0, 30.0, 30.0 ]
+					"patching_rect" : [ 21.0, 673.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -521,9 +521,9 @@
 					"patching_rect" : [ 81.0, 514.0, 129.0, 39.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ -70 ],
+							"parameter_initial" : [ -7.0 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "live.gain~[11]",
+							"parameter_longname" : "live.gain~[8]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
 							"parameter_modmode" : 0,
@@ -563,10 +563,367 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "cm",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 343.0, 560.0, 700.0, 33.0 ],
+					"text" : "4ch: 音楽(5曲ミックス)は前(1・2)。回転ノブを上げると /sin /cos の角度で部屋の周りを回る(L=+20° R=-20°)。mountainWind はリア(3・4)のみ"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "pk",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 343.0, 600.0, 70.0, 22.0 ],
+					"text" : "pak 0. 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "xl",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 343.0, 630.0, 200.0, 22.0 ],
+					"text" : "expr 2.5*($f1*0.9397-$f2*0.342)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "yl",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 553.0, 630.0, 200.0, 22.0 ],
+					"text" : "expr 2.5*($f2*0.9397+$f1*0.342)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "xr",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 343.0, 655.0, 200.0, 22.0 ],
+					"text" : "expr 2.5*($f1*0.9397+$f2*0.342)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "yr",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 553.0, 655.0, 200.0, 22.0 ],
+					"text" : "expr 2.5*($f2*0.9397-$f1*0.342)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "qpl",
+					"maxclass" : "newobj",
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "signal", "signal", "" ],
+					"patching_rect" : [ 343.0, 695.0, 70.0, 22.0 ],
+					"text" : "quadpan~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "qpr",
+					"maxclass" : "newobj",
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "signal", "signal", "" ],
+					"patching_rect" : [ 553.0, 695.0, 70.0, 22.0 ],
+					"text" : "quadpan~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "lsh",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 763.0, 695.0, 80.0, 22.0 ],
+					"text" : "loadmess 0.8"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "lha",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 843.0, 695.0, 80.0, 22.0 ],
+					"text" : "loadmess 0.3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "csh",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 763.0, 720.0, 300.0, 20.0 ],
+					"text" : "← パン鋭さ / haas量(音楽なので控えめ)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "rear L",
+					"id" : "o3",
+					"index" : 3,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 161.0, 803.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "rear R",
+					"id" : "o4",
+					"index" : 4,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 213.0, 803.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "cw",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 81.0, 560.0, 250.0, 20.0 ],
+					"text" : "mountainWind → リア(3・4)のみ"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "fk",
+					"maxclass" : "flonum",
+					"maximum" : 1.0,
+					"minimum" : 0.0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 943.0, 695.0, 45.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "lk",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 993.0, 695.0, 73.0, 22.0 ],
+					"text" : "loadmess 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "ck",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 943.0, 720.0, 249.0, 20.0 ],
+					"text" : "← 音楽の回転量 0=前のみ 1=/sin /cos で回る"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "inv",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 943.0, 750.0, 70.0, 22.0 ],
+					"text" : "expr 1.-$f1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "ml",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 343.0, 750.0, 45.0, 22.0 ],
+					"text" : "*~ 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "mr",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 403.0, 750.0, 45.0, 22.0 ],
+					"text" : "*~ 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "rl",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 463.0, 750.0, 45.0, 22.0 ],
+					"text" : "*~ 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "rr",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 523.0, 750.0, 45.0, 22.0 ],
+					"text" : "*~ 0."
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 1 ],
+					"destination" : [ "inv", 0 ],
+					"order" : 0,
+					"source" : [ "fk", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "rl", 1 ],
+					"order" : 2,
+					"source" : [ "fk", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "rr", 1 ],
+					"order" : 1,
+					"source" : [ "fk", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "ml", 1 ],
+					"order" : 1,
+					"source" : [ "inv", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "mr", 1 ],
+					"order" : 0,
+					"source" : [ "inv", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpl", 4 ],
+					"order" : 1,
+					"source" : [ "lha", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpr", 4 ],
+					"order" : 0,
+					"source" : [ "lha", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "fk", 0 ],
+					"source" : [ "lk", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpl", 3 ],
+					"order" : 1,
+					"source" : [ "lsh", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpr", 3 ],
+					"order" : 0,
+					"source" : [ "lsh", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "ml", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "mr", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -580,7 +937,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-38", 1 ],
+					"destination" : [ "obj-38", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -589,6 +946,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "pk", 0 ],
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "pk", 1 ],
+					"source" : [ "obj-21", 0 ]
 				}
 
 			}
@@ -664,14 +1035,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "o3", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "o4", 0 ],
 					"source" : [ "obj-3", 1 ]
 				}
 
@@ -715,14 +1086,32 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "ml", 0 ],
+					"order" : 1,
 					"source" : [ "obj-38", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "mr", 0 ],
+					"order" : 1,
+					"source" : [ "obj-38", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "rl", 0 ],
+					"order" : 0,
+					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "rr", 0 ],
+					"order" : 0,
 					"source" : [ "obj-38", 1 ]
 				}
 
@@ -968,24 +1357,137 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-3" : [ "live.gain~[11]", "live.gain~", 0 ],
-			"obj-38" : [ "live.gain~[1]", "live.gain~", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+, 			{
+				"patchline" : 				{
+					"destination" : [ "xl", 0 ],
+					"order" : 3,
+					"source" : [ "pk", 0 ]
 				}
 
 			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [  ],
-		"autosave" : 0
+, 			{
+				"patchline" : 				{
+					"destination" : [ "xr", 0 ],
+					"order" : 2,
+					"source" : [ "pk", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "yl", 0 ],
+					"order" : 1,
+					"source" : [ "pk", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "yr", 0 ],
+					"order" : 0,
+					"source" : [ "pk", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "o3", 0 ],
+					"source" : [ "qpl", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "o4", 0 ],
+					"source" : [ "qpl", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "qpl", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "qpl", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "o3", 0 ],
+					"source" : [ "qpr", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "o4", 0 ],
+					"source" : [ "qpr", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "qpr", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "qpr", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpl", 0 ],
+					"source" : [ "rl", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpr", 0 ],
+					"source" : [ "rr", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpl", 1 ],
+					"source" : [ "xl", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpr", 1 ],
+					"source" : [ "xr", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpl", 2 ],
+					"source" : [ "yl", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "qpr", 2 ],
+					"source" : [ "yr", 0 ]
+				}
+
+			}
+ ]
 	}
 
 }

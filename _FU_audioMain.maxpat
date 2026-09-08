@@ -279,8 +279,10 @@
 					"id": "obj-23",
 					"maxclass": "newobj",
 					"numinlets": 0,
-					"numoutlets": 2,
+					"numoutlets": 4,
 					"outlettype": [
+						"signal",
+						"signal",
 						"signal",
 						"signal"
 					],
@@ -413,8 +415,10 @@
 					"id": "obj-12",
 					"maxclass": "newobj",
 					"numinlets": 0,
-					"numoutlets": 2,
+					"numoutlets": 4,
 					"outlettype": [
+						"signal",
+						"signal",
 						"signal",
 						"signal"
 					],
@@ -3089,8 +3093,10 @@
 					"id": "obj-4",
 					"maxclass": "newobj",
 					"numinlets": 0,
-					"numoutlets": 2,
+					"numoutlets": 4,
 					"outlettype": [
+						"signal",
+						"signal",
 						"signal",
 						"signal"
 					],
@@ -5221,6 +5227,78 @@
 					"destination": [
 						"obj-62",
 						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-12",
+						2
+					],
+					"destination": [
+						"obj-8",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-12",
+						3
+					],
+					"destination": [
+						"obj-8",
+						3
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-23",
+						2
+					],
+					"destination": [
+						"obj-22",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-23",
+						3
+					],
+					"destination": [
+						"obj-22",
+						3
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-4",
+						2
+					],
+					"destination": [
+						"obj-6",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-4",
+						3
+					],
+					"destination": [
+						"obj-6",
+						3
 					]
 				}
 			}
