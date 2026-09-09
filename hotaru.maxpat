@@ -300,7 +300,7 @@
 								"obj-61",
 								"number",
 								"int",
-								0,
+								100,
 								5,
 								"obj-60",
 								"flonum",
@@ -320,7 +320,7 @@
 								"obj-19",
 								"flonum",
 								"float",
-								0.0,
+								300.0,
 								5,
 								"obj-56",
 								"attrui",
@@ -1899,6 +1899,182 @@
 					],
 					"text": "← 送りの保護リミッター。上げても入口はここで頭打ち"
 				}
+			},
+			{
+				"box": {
+					"id": "cmod",
+					"maxclass": "comment",
+					"patching_rect": [
+						1300.0,
+						690.0,
+						420.0,
+						33.0
+					],
+					"text": "▼ Size 揺れ(共鳴防止)。リバーブの遅延時間をゆっくり揺らして自励発振を崩す。0=なし 0.3=控えめ",
+					"linecount": 2
+				}
+			},
+			{
+				"box": {
+					"id": "fm",
+					"maxclass": "flonum",
+					"patching_rect": [
+						1300.0,
+						725.0,
+						50.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"minimum": 0.0,
+					"maximum": 1.0,
+					"parameter_enable": 0
+				}
+			},
+			{
+				"box": {
+					"id": "lmo",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1355.0,
+						725.0,
+						80.0,
+						22.0
+					],
+					"text": "loadmess 0.3",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lfo1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1300.0,
+						755.0,
+						80.0,
+						22.0
+					],
+					"text": "cycle~ 0.13",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lfo2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1400.0,
+						755.0,
+						80.0,
+						22.0
+					],
+					"text": "cycle~ 0.17",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "mg1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1300.0,
+						785.0,
+						45.0,
+						22.0
+					],
+					"text": "*~ 0.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "mg2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1400.0,
+						785.0,
+						45.0,
+						22.0
+					],
+					"text": "*~ 0.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "rlim1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						330.0,
+						700.0,
+						270.0,
+						22.0
+					],
+					"text": "limi~ 2 @threshold -3. @release 200 @lookahead 64",
+					"numinlets": 2,
+					"numoutlets": 2,
+					"outlettype": [
+						"signal",
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "rlim2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						617.0,
+						700.0,
+						270.0,
+						22.0
+					],
+					"text": "limi~ 2 @threshold -3. @release 200 @lookahead 64",
+					"numinlets": 2,
+					"numoutlets": 2,
+					"outlettype": [
+						"signal",
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "crl",
+					"maxclass": "comment",
+					"patching_rect": [
+						330.0,
+						725.0,
+						500.0,
+						20.0
+					],
+					"text": "↑ リバーブ戻りの保護リミッター(-3 dB)。鳴り続けてもピークは超えない"
+				}
 			}
 		],
 		"lines": [
@@ -2777,102 +2953,6 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-44",
-						0
-					],
-					"destination": [
-						"obj-43",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-44",
-						1
-					],
-					"destination": [
-						"obj-43",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-44",
-						1
-					],
-					"destination": [
-						"rl",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-44",
-						0
-					],
-					"destination": [
-						"rr",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-45",
-						0
-					],
-					"destination": [
-						"obj-43",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-45",
-						1
-					],
-					"destination": [
-						"obj-43",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-45",
-						1
-					],
-					"destination": [
-						"rl",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-45",
-						0
-					],
-					"destination": [
-						"rr",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"rl",
 						0
 					],
@@ -2986,6 +3066,234 @@
 					],
 					"destination": [
 						"obj-45",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lmo",
+						0
+					],
+					"destination": [
+						"fm",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"fm",
+						0
+					],
+					"destination": [
+						"mg1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"fm",
+						0
+					],
+					"destination": [
+						"mg2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lfo1",
+						0
+					],
+					"destination": [
+						"mg1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lfo2",
+						0
+					],
+					"destination": [
+						"mg2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mg1",
+						0
+					],
+					"destination": [
+						"obj-44",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mg2",
+						0
+					],
+					"destination": [
+						"obj-45",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-44",
+						0
+					],
+					"destination": [
+						"rlim1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-44",
+						1
+					],
+					"destination": [
+						"rlim1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim1",
+						0
+					],
+					"destination": [
+						"obj-43",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim1",
+						1
+					],
+					"destination": [
+						"obj-43",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim1",
+						1
+					],
+					"destination": [
+						"rl",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim1",
+						0
+					],
+					"destination": [
+						"rr",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-45",
+						0
+					],
+					"destination": [
+						"rlim2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-45",
+						1
+					],
+					"destination": [
+						"rlim2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim2",
+						0
+					],
+					"destination": [
+						"obj-43",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim2",
+						1
+					],
+					"destination": [
+						"obj-43",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim2",
+						1
+					],
+					"destination": [
+						"rl",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"rlim2",
+						0
+					],
+					"destination": [
+						"rr",
 						0
 					]
 				}
