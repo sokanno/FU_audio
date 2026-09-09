@@ -1578,12 +1578,13 @@
 					"id": "csum",
 					"maxclass": "comment",
 					"patching_rect": [
-						700.0,
+						330.0,
 						470.0,
-						400.0,
-						20.0
+						560.0,
+						33.0
 					],
-					"text": "4ch: 蛍は位置から直接(dry)。リバーブは wet のみ(Mix=100)を4方向(リアはL/R入替 ×0.5)"
+					"text": "4ch: 蛍は位置から直接(dry)。リバーブは wet のみ(Mix=100)を4方向(リアはL/R入替 ×0.5)。※旧配線で R が Reverb の Size CV(inlet 2)に入っていたのを撤去(Size が音声で暴れてグオーッと鳴る原因)",
+					"linecount": 2
 				}
 			},
 			{
@@ -1593,10 +1594,10 @@
 					"patching_rect": [
 						700.0,
 						498.0,
-						50.0,
+						55.0,
 						22.0
 					],
-					"text": "*~ 0.5",
+					"text": "*~ 0.25",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [
@@ -1796,6 +1797,107 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"outlettype": []
+				}
+			},
+			{
+				"box": {
+					"id": "fw",
+					"maxclass": "flonum",
+					"patching_rect": [
+						900.0,
+						545.0,
+						50.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"minimum": 0.0,
+					"maximum": 4.0,
+					"parameter_enable": 0
+				}
+			},
+			{
+				"box": {
+					"id": "lw",
+					"maxclass": "newobj",
+					"patching_rect": [
+						955.0,
+						545.0,
+						80.0,
+						22.0
+					],
+					"text": "loadmess 2.5",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "cw",
+					"maxclass": "comment",
+					"patching_rect": [
+						900.0,
+						520.0,
+						330.0,
+						20.0
+					],
+					"text": "▼ リバーブ送り量(初期2.5、旧相当1.0、上限4)。壊れない範囲で上げる → store 1"
+				}
+			},
+			{
+				"box": {
+					"id": "ws",
+					"maxclass": "newobj",
+					"patching_rect": [
+						900.0,
+						575.0,
+						45.0,
+						22.0
+					],
+					"text": "*~ 0.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sl",
+					"maxclass": "newobj",
+					"patching_rect": [
+						900.0,
+						605.0,
+						260.0,
+						22.0
+					],
+					"text": "limi~ 1 @threshold -3. @release 150 @lookahead 64",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "csl",
+					"maxclass": "comment",
+					"patching_rect": [
+						900.0,
+						630.0,
+						330.0,
+						20.0
+					],
+					"text": "← 送りの保護リミッター。上げても入口はここで頭打ち"
 				}
 			}
 		],
@@ -2519,54 +2621,6 @@
 			{
 				"patchline": {
 					"source": [
-						"sum",
-						0
-					],
-					"destination": [
-						"obj-44",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"sum",
-						0
-					],
-					"destination": [
-						"obj-45",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-7",
-						1
-					],
-					"destination": [
-						"obj-44",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-7",
-						1
-					],
-					"destination": [
-						"obj-45",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"ld",
 						0
 					],
@@ -2860,6 +2914,78 @@
 					],
 					"destination": [
 						"o4",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lw",
+						0
+					],
+					"destination": [
+						"fw",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"fw",
+						0
+					],
+					"destination": [
+						"ws",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sum",
+						0
+					],
+					"destination": [
+						"ws",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ws",
+						0
+					],
+					"destination": [
+						"sl",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sl",
+						0
+					],
+					"destination": [
+						"obj-44",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sl",
+						0
+					],
+					"destination": [
+						"obj-45",
 						0
 					]
 				}
