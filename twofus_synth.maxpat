@@ -891,7 +891,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 1",
+									"text": "route 0",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -2330,7 +2330,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 2",
+									"text": "route 0",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -3772,7 +3772,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 3",
+									"text": "route 0",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -5214,7 +5214,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 4",
+									"text": "route 0",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -6656,7 +6656,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 5",
+									"text": "route 1",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -8098,7 +8098,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 6",
+									"text": "route 2",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -9540,7 +9540,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 7",
+									"text": "route 3",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -10982,7 +10982,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 8",
+									"text": "route 4",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -12421,7 +12421,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 9",
+									"text": "route 5",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -13862,7 +13862,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 10",
+									"text": "route 6",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -15304,7 +15304,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 11",
+									"text": "route 7",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -16746,7 +16746,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 12",
+									"text": "route 8",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -18188,7 +18188,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 13",
+									"text": "route 9",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -19630,7 +19630,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 14",
+									"text": "route 10",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -21072,7 +21072,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 15",
+									"text": "route 11",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -22512,7 +22512,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 16",
+									"text": "route 12",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -23952,7 +23952,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 17",
+									"text": "route 13",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -25394,7 +25394,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 18",
+									"text": "route 14",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -26836,7 +26836,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 19",
+									"text": "route 15",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -28278,7 +28278,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 20",
+									"text": "route 16",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -29719,7 +29719,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 21",
+									"text": "route 17",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -31160,7 +31160,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 22",
+									"text": "route 18",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -32601,7 +32601,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 23",
+									"text": "route 19",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -34042,7 +34042,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 24",
+									"text": "route 20",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -35483,7 +35483,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 25",
+									"text": "route 21",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -36923,7 +36923,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 26",
+									"text": "route 22",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -38365,7 +38365,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 27",
+									"text": "route 23",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -39807,7 +39807,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 28",
+									"text": "route 24",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -41249,7 +41249,7 @@
 										60.0,
 										22.0
 									],
-									"text": "route 29",
+									"text": "route 25",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": [
@@ -44256,6 +44256,19 @@
 						"signal"
 					]
 				}
+			},
+			{
+				"box": {
+					"id": "cshift",
+					"maxclass": "comment",
+					"patching_rect": [
+						30.0,
+						60.0,
+						700.0,
+						20.0
+					],
+					"text": "25台用: チューブID k → voice k+4 (ID1=C3 … ID25=F6)。下4音 F2-Bb2 は未使用。位置表もこの対応でボイス内 route を設定済み"
+				}
 			}
 		],
 		"lines": [
@@ -44547,354 +44560,6 @@
 					"source": [
 						"obj-snap-q",
 						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice0",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice1",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice10",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						10
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice11",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						11
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice12",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						12
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice13",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						13
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice14",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						14
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice15",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						15
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice16",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						16
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice17",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						17
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice18",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						18
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice19",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						19
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice2",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice20",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						20
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice21",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						21
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice22",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						22
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice23",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						23
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice24",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						24
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice25",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						25
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice26",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						26
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice27",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						27
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice28",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						28
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice3",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						3
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice4",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						4
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice5",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						5
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice6",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						6
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice7",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						7
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice8",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						8
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-voice9",
-						0
-					],
-					"source": [
-						"obj-tube-route",
-						9
 					]
 				}
 			},
@@ -46948,6 +46613,306 @@
 					],
 					"destination": [
 						"bgfr",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						0
+					],
+					"destination": [
+						"obj-voice4",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						1
+					],
+					"destination": [
+						"obj-voice5",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						2
+					],
+					"destination": [
+						"obj-voice6",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						3
+					],
+					"destination": [
+						"obj-voice7",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						4
+					],
+					"destination": [
+						"obj-voice8",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						5
+					],
+					"destination": [
+						"obj-voice9",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						6
+					],
+					"destination": [
+						"obj-voice10",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						7
+					],
+					"destination": [
+						"obj-voice11",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						8
+					],
+					"destination": [
+						"obj-voice12",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						9
+					],
+					"destination": [
+						"obj-voice13",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						10
+					],
+					"destination": [
+						"obj-voice14",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						11
+					],
+					"destination": [
+						"obj-voice15",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						12
+					],
+					"destination": [
+						"obj-voice16",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						13
+					],
+					"destination": [
+						"obj-voice17",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						14
+					],
+					"destination": [
+						"obj-voice18",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						15
+					],
+					"destination": [
+						"obj-voice19",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						16
+					],
+					"destination": [
+						"obj-voice20",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						17
+					],
+					"destination": [
+						"obj-voice21",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						18
+					],
+					"destination": [
+						"obj-voice22",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						19
+					],
+					"destination": [
+						"obj-voice23",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						20
+					],
+					"destination": [
+						"obj-voice24",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						21
+					],
+					"destination": [
+						"obj-voice25",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						22
+					],
+					"destination": [
+						"obj-voice26",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						23
+					],
+					"destination": [
+						"obj-voice27",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-tube-route",
+						24
+					],
+					"destination": [
+						"obj-voice28",
 						0
 					]
 				}
