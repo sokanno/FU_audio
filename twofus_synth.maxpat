@@ -42925,7 +42925,7 @@
 										157.0,
 										22.0
 									],
-									"text": "open Interstellar.mp3, loop 1"
+									"text": "open interstellar_atempo.m4a, loop 1"
 								}
 							},
 							{
@@ -43082,7 +43082,7 @@
 										450.0,
 										20.0
 									],
-									"text": "BGM: Interstellar.mp3 | always looping | volume: fade-in 3s / fade-out 1.5s"
+									"text": "BGM: interstellar_atempo.m4a | always looping | volume: fade-in 3s / fade-out 1.5s"
 								}
 							}
 						],
