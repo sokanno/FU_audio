@@ -43507,7 +43507,7 @@
 						70.0,
 						22.0
 					],
-					"text": "loadmess 1.",
+					"text": "loadmess 1.5",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [
@@ -43525,7 +43525,7 @@
 						220.0,
 						20.0
 					],
-					"text": "← dry(チューブ直接音)の量"
+					"text": "← dry(チューブ直接音)の量 初期1.5"
 				}
 			},
 			{
@@ -44167,6 +44167,94 @@
 						20.0
 					],
 					"text": "出力段: 29ボイス×4ch → gain~ ×4 → dry量 → limi~ 4 → outlet 1-4 / リバーブ送りは4chの和×0.25"
+				}
+			},
+			{
+				"box": {
+					"id": "fb",
+					"maxclass": "flonum",
+					"patching_rect": [
+						500.0,
+						650.0,
+						45.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"minimum": 0.0,
+					"maximum": 2.0,
+					"parameter_enable": 0
+				}
+			},
+			{
+				"box": {
+					"id": "lb",
+					"maxclass": "newobj",
+					"patching_rect": [
+						550.0,
+						650.0,
+						70.0,
+						22.0
+					],
+					"text": "loadmess 0.7",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "cb",
+					"maxclass": "comment",
+					"patching_rect": [
+						625.0,
+						650.0,
+						200.0,
+						20.0
+					],
+					"text": "← BGM の量 初期0.7(旧相当1.0)"
+				}
+			},
+			{
+				"box": {
+					"id": "bl",
+					"maxclass": "newobj",
+					"patching_rect": [
+						500.0,
+						728.0,
+						45.0,
+						22.0
+					],
+					"text": "*~ 0.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "br",
+					"maxclass": "newobj",
+					"patching_rect": [
+						555.0,
+						728.0,
+						45.0,
+						22.0
+					],
+					"text": "*~ 0.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
 				}
 			}
 		],
@@ -46663,30 +46751,6 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-bgm",
-						0
-					],
-					"destination": [
-						"bgfl",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm",
-						1
-					],
-					"destination": [
-						"bgfr",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"bgfl",
 						0
 					],
@@ -46735,30 +46799,6 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-bgm",
-						0
-					],
-					"destination": [
-						"obj-dac",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-bgm",
-						1
-					],
-					"destination": [
-						"obj-dac",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"lbp",
 						0
 					],
@@ -46800,6 +46840,114 @@
 					],
 					"destination": [
 						"stp",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lb",
+						0
+					],
+					"destination": [
+						"fb",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"fb",
+						0
+					],
+					"destination": [
+						"bl",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"fb",
+						0
+					],
+					"destination": [
+						"br",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-bgm",
+						0
+					],
+					"destination": [
+						"bl",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-bgm",
+						1
+					],
+					"destination": [
+						"br",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"bl",
+						0
+					],
+					"destination": [
+						"obj-dac",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"br",
+						0
+					],
+					"destination": [
+						"obj-dac",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"bl",
+						0
+					],
+					"destination": [
+						"bgfl",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"br",
+						0
+					],
+					"destination": [
+						"bgfr",
 						0
 					]
 				}
