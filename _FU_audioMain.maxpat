@@ -239,8 +239,10 @@
 					"id": "obj-25",
 					"maxclass": "newobj",
 					"numinlets": 0,
-					"numoutlets": 2,
+					"numoutlets": 4,
 					"outlettype": [
+						"signal",
+						"signal",
 						"signal",
 						"signal"
 					],
@@ -5324,6 +5326,30 @@
 					],
 					"destination": [
 						"obj-30",
+						3
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-25",
+						2
+					],
+					"destination": [
+						"obj-41",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-25",
+						3
+					],
+					"destination": [
+						"obj-41",
 						3
 					]
 				}
