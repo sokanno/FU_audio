@@ -3729,7 +3729,7 @@
 				"box": {
 					"id": "obj-200",
 					"maxclass": "comment",
-					"text": "陣取り(SC)リターン ← BlackHole ch1-4\n入力構成を選ぶ。MOTU=adc~15-18 / IFなし=adc~1-4(固定)\nRME: 右の数値に「RME入力数+1」→ 下の adc~ に set。store 1 で保存",
+					"text": "陣取り(SC)リターン ← BlackHole ch1-4\n入力構成を選ぶ。MOTU=adc~15-18 / IFなし=adc~1-4(固定)\nその他のIF: 右の数値に「IFの入力数+1」→ 右下の adc~ に set 1..4 (adc~ の set は「set 出口 チャンネル」)。store 1 で保存",
 					"patching_rect": [
 						660.0,
 						30.0,
@@ -3835,42 +3835,6 @@
 			},
 			{
 				"box": {
-					"id": "obj-206",
-					"maxclass": "newobj",
-					"text": "pack 0 0 0 0",
-					"numinlets": 4,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						660.0,
-						203.0,
-						124.0,
-						22.0
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-207",
-					"maxclass": "newobj",
-					"text": "prepend set",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"patching_rect": [
-						660.0,
-						228.0,
-						72.0,
-						22.0
-					]
-				}
-			},
-			{
-				"box": {
 					"id": "obj-208",
 					"maxclass": "newobj",
 					"text": "adc~ 15 16 17 18",
@@ -3954,7 +3918,7 @@
 						",",
 						"IFなし: BlackHole 直 (1)",
 						",",
-						"RME アグリゲート (右の数値)"
+						"その他のIF (右の数値=入力数+1)"
 					],
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -4101,6 +4065,78 @@
 						288.0,
 						78.0,
 						22.0
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "obj-230",
+					"maxclass": "newobj",
+					"text": "prepend set 1",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					],
+					"patching_rect": [
+						660.0,
+						203.0,
+						78,
+						22
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "obj-231",
+					"maxclass": "newobj",
+					"text": "prepend set 2",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					],
+					"patching_rect": [
+						742.0,
+						203.0,
+						78,
+						22
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "obj-232",
+					"maxclass": "newobj",
+					"text": "prepend set 3",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					],
+					"patching_rect": [
+						824.0,
+						203.0,
+						78,
+						22
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "obj-233",
+					"maxclass": "newobj",
+					"text": "prepend set 4",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					],
+					"patching_rect": [
+						906.0,
+						203.0,
+						78,
+						22
 					]
 				}
 			}
@@ -5850,78 +5886,6 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-202",
-						0
-					],
-					"destination": [
-						"obj-206",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-203",
-						0
-					],
-					"destination": [
-						"obj-206",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-204",
-						0
-					],
-					"destination": [
-						"obj-206",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-205",
-						0
-					],
-					"destination": [
-						"obj-206",
-						3
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-206",
-						0
-					],
-					"destination": [
-						"obj-207",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-207",
-						0
-					],
-					"destination": [
-						"obj-208",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"obj-209",
 						0
 					],
@@ -6216,6 +6180,102 @@
 					"destination": [
 						"obj-209",
 						3
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-202",
+						0
+					],
+					"destination": [
+						"obj-230",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-203",
+						0
+					],
+					"destination": [
+						"obj-231",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-204",
+						0
+					],
+					"destination": [
+						"obj-232",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-205",
+						0
+					],
+					"destination": [
+						"obj-233",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-230",
+						0
+					],
+					"destination": [
+						"obj-208",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-231",
+						0
+					],
+					"destination": [
+						"obj-208",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-232",
+						0
+					],
+					"destination": [
+						"obj-208",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-233",
+						0
+					],
+					"destination": [
+						"obj-208",
+						0
 					]
 				}
 			}

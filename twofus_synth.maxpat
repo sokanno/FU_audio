@@ -46141,24 +46141,6 @@
 							},
 							{
 								"box": {
-									"id": "obj-1",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"bang"
-									],
-									"patching_rect": [
-										350.0,
-										111.0,
-										67.0,
-										22.0
-									],
-									"text": "delay 1000"
-								}
-							},
-							{
-								"box": {
 									"comment": "any OSC msg",
 									"id": "obj-in",
 									"index": 1,
@@ -46301,7 +46283,7 @@
 										207.0,
 										22.0
 									],
-									"text": "open interstellar_atempo.m4a, loop 1"
+									"text": "open FU_Katowice.wav, loop 1"
 								}
 							},
 							{
@@ -46393,7 +46375,7 @@
 										47.0,
 										22.0
 									],
-									"text": "*~ 0.25"
+									"text": "*~ 0.107"
 								}
 							},
 							{
@@ -46411,7 +46393,7 @@
 										47.0,
 										22.0
 									],
-									"text": "*~ 0.25"
+									"text": "*~ 0.107"
 								}
 							},
 							{
@@ -46458,23 +46440,79 @@
 										450.0,
 										20.0
 									],
-									"text": "BGM: interstellar_atempo.m4a | always looping | volume: fade-in 3s / fade-out 1.5s"
+									"text": "BGM: FU_Katowice.wav (3:30) | シーン開始で頭から再生、フェードアウト後に停止 | volume: fade-in 3s / fade-out 1.5s | 音量は旧 interstellar(0.25) と平均レベルを揃えて 0.107 (+7.4dB 大きいため)"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-once",
+									"maxclass": "newobj",
+									"text": "onebang 1",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"outlettype": [
+										"bang",
+										"bang"
+									],
+									"patching_rect": [
+										350.0,
+										120.0,
+										70,
+										22
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-stopdel",
+									"maxclass": "newobj",
+									"text": "delay 1600",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"bang"
+									],
+									"patching_rect": [
+										50.0,
+										180.0,
+										70,
+										22
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-stop",
+									"maxclass": "message",
+									"text": "0",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										50.0,
+										210.0,
+										29.5,
+										22
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-note2",
+									"maxclass": "comment",
+									"text": "シーン開始(最初のOSC)で頭から再生 / 無音10秒→フェードアウト→停止&リセット",
+									"patching_rect": [
+										130.0,
+										180.0,
+										260,
+										33
+									]
 								}
 							}
 						],
 						"lines": [
-							{
-								"patchline": {
-									"destination": [
-										"obj-start",
-										0
-									],
-									"source": [
-										"obj-1",
-										0
-									]
-								}
-							},
 							{
 								"patchline": {
 									"destination": [
@@ -46557,19 +46595,6 @@
 									"order": 0,
 									"source": [
 										"obj-line",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-1",
-										0
-									],
-									"order": 1,
-									"source": [
-										"obj-loadbang",
 										0
 									]
 								}
@@ -46720,6 +46745,78 @@
 									"source": [
 										"obj-vol-r",
 										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-in",
+										0
+									],
+									"destination": [
+										"obj-once",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-once",
+										0
+									],
+									"destination": [
+										"obj-start",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-silence",
+										0
+									],
+									"destination": [
+										"obj-stopdel",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-stopdel",
+										0
+									],
+									"destination": [
+										"obj-stop",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-stop",
+										0
+									],
+									"destination": [
+										"obj-sf",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-stopdel",
+										0
+									],
+									"destination": [
+										"obj-once",
+										1
 									]
 								}
 							}
