@@ -3443,7 +3443,7 @@
 					"id": "obj-62",
 					"maxclass": "newobj",
 					"numinlets": 4,
-					"numoutlets": 7,
+					"numoutlets": 8,
 					"outlettype": [
 						"signal",
 						"signal",
@@ -3451,7 +3451,8 @@
 						"signal",
 						"signal",
 						"signal",
-						""
+						"signal",
+						"list"
 					],
 					"patching_rect": [
 						34.0,
@@ -3459,22 +3460,22 @@
 						190.0,
 						22.0
 					],
-					"text": "matrix~ 4 6 1. @ramp 50"
+					"text": "matrix~ 4 7 1. @ramp 50"
 				}
 			},
 			{
 				"box": {
 					"id": "obj-63",
 					"maxclass": "newobj",
-					"numinlets": 4,
+					"numinlets": 5,
 					"numoutlets": 0,
 					"patching_rect": [
 						34.0,
 						666.0,
-						90.0,
+						100.0,
 						22.0
 					],
-					"text": "dac~ 1 2 3 4"
+					"text": "dac~ 1 2 3 4 5"
 				}
 			},
 			{
@@ -3588,9 +3589,9 @@
 						440.0,
 						688.0,
 						210.0,
-						35.0
+						49.0
 					],
-					"text": "clear, 0 0 1., 1 1 1., 2 2 1., 3 3 1., 0 4 1., 1 5 1., 2 4 0.707, 3 5 0.707"
+					"text": "clear, 0 0 1., 1 1 1., 2 2 1., 3 3 1., 0 4 1., 1 5 1., 2 4 0.707, 3 5 0.707, 0 6 1., 1 6 1., 2 6 1., 3 6 1."
 				}
 			},
 			{
@@ -3606,7 +3607,7 @@
 						220.0,
 						33.0
 					],
-					"text": "2ch: 3/4 を 1/2 に折り込み。REC(sfrecord~)は常にこの2mix"
+					"text": "2ch: 3/4 を 1/2 に折り込み(ウーファーなし)。REC(sfrecord~)は常にこの2mix"
 				}
 			},
 			{
@@ -4143,6 +4144,126 @@
 						78,
 						22
 					]
+				}
+			},
+			{
+				"box": {
+					"id": "subc",
+					"maxclass": "comment",
+					"patching_rect": [
+						130.0,
+						700.0,
+						300.0,
+						20.0
+					],
+					"text": "ウーファー(dac~ 5): 4chの和 → LPF 100Hz ×2 → 音量。4chモードのみ"
+				}
+			},
+			{
+				"box": {
+					"id": "sublp",
+					"maxclass": "newobj",
+					"patching_rect": [
+						130.0,
+						725.0,
+						100.0,
+						22.0
+					],
+					"text": "lores~ 100. 0.",
+					"numinlets": 3,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sublp2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						240.0,
+						725.0,
+						100.0,
+						22.0
+					],
+					"text": "lores~ 100. 0.",
+					"numinlets": 3,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "subg",
+					"maxclass": "newobj",
+					"patching_rect": [
+						130.0,
+						755.0,
+						45.0,
+						22.0
+					],
+					"text": "*~ 0.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "subf",
+					"maxclass": "flonum",
+					"patching_rect": [
+						185.0,
+						755.0,
+						50.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"minimum": 0.0,
+					"maximum": 2.0,
+					"parameter_enable": 0,
+					"varname": "sub_level"
+				}
+			},
+			{
+				"box": {
+					"id": "subl",
+					"maxclass": "newobj",
+					"patching_rect": [
+						240.0,
+						755.0,
+						80.0,
+						22.0
+					],
+					"text": "loadmess 0.5",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "subc2",
+					"maxclass": "comment",
+					"patching_rect": [
+						130.0,
+						780.0,
+						300.0,
+						20.0
+					],
+					"text": "← ウーファー音量(store 1 で保存)。カットオフは lores~ の数値"
 				}
 			}
 		],
@@ -6281,6 +6402,78 @@
 					"destination": [
 						"obj-208",
 						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-62",
+						6
+					],
+					"destination": [
+						"sublp",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sublp",
+						0
+					],
+					"destination": [
+						"sublp2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sublp2",
+						0
+					],
+					"destination": [
+						"subg",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"subl",
+						0
+					],
+					"destination": [
+						"subf",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"subf",
+						0
+					],
+					"destination": [
+						"subg",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"subg",
+						0
+					],
+					"destination": [
+						"obj-63",
+						4
 					]
 				}
 			}
