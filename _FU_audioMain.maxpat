@@ -623,7 +623,7 @@
 				"box": {
 					"id": "obj-36",
 					"maxclass": "newobj",
-					"numinlets": 2,
+					"numinlets": 3,
 					"numoutlets": 0,
 					"patcher": {
 						"fileversion": 1,
@@ -733,7 +733,7 @@
 										29.5,
 										22.0
 									],
-									"text": "6"
+									"text": "7"
 								}
 							},
 							{
@@ -751,7 +751,7 @@
 										29.5,
 										22.0
 									],
-									"text": "5"
+									"text": "6"
 								}
 							},
 							{
@@ -919,7 +919,7 @@
 										29.5,
 										22.0
 									],
-									"text": "4"
+									"text": "5"
 								}
 							},
 							{
@@ -1267,7 +1267,7 @@
 										29.5,
 										22.0
 									],
-									"text": "3"
+									"text": "4"
 								}
 							},
 							{
@@ -1285,7 +1285,7 @@
 										29.5,
 										22.0
 									],
-									"text": "2"
+									"text": "3"
 								}
 							},
 							{
@@ -1303,7 +1303,7 @@
 										29.5,
 										22.0
 									],
-									"text": "1"
+									"text": "2"
 								}
 							},
 							{
@@ -1321,7 +1321,7 @@
 										29.5,
 										22.0
 									],
-									"text": "7"
+									"text": "1"
 								}
 							},
 							{
@@ -1785,6 +1785,150 @@
 										33.0
 									]
 								}
+							},
+							{
+								"box": {
+									"id": "obj-110",
+									"maxclass": "inlet",
+									"numinlets": 0,
+									"numoutlets": 1,
+									"patching_rect": [
+										900.0,
+										23.0,
+										30.0,
+										30.0
+									],
+									"outlettype": [
+										""
+									],
+									"comment": "ランダム ON/OFF"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-111",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"patching_rect": [
+										900.0,
+										65.0,
+										29.5,
+										22.0
+									],
+									"text": "+ 1",
+									"outlettype": [
+										"int"
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-112",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"patching_rect": [
+										110.0,
+										288.0,
+										55.0,
+										22.0
+									],
+									"text": "gate 2 1",
+									"outlettype": [
+										"",
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-113",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 1,
+									"patching_rect": [
+										110.0,
+										318.0,
+										115.0,
+										22.0
+									],
+									"text": "js autoplay_shuffle.js",
+									"outlettype": [
+										""
+									],
+									"saved_object_attributes": {
+										"filename": "autoplay_shuffle.js",
+										"parameter_enable": 0
+									}
+								}
+							},
+							{
+								"box": {
+									"id": "obj-114",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 2,
+									"patching_rect": [
+										425.0,
+										330.0,
+										40.0,
+										22.0
+									],
+									"text": "t i b",
+									"outlettype": [
+										"int",
+										"bang"
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-115",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"patching_rect": [
+										425.0,
+										357.0,
+										29.5,
+										22.0
+									],
+									"text": "i 7",
+									"outlettype": [
+										"int"
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-116",
+									"maxclass": "comment",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"patching_rect": [
+										900.0,
+										95.0,
+										260.0,
+										60.0
+									],
+									"text": "ランダム: 1周(7シーン)ごとにシャッフル。全部出るまでダブらず、周の変わり目も同じシーンは続かない。順番は Max コンソールに出る。"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-117",
+									"maxclass": "comment",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"patching_rect": [
+										470.0,
+										330.0,
+										240.0,
+										33.0
+									],
+									"text": "直前のシーン番号を覚えておき、3秒後にそのシーンをフェードアウト(ランダムでも正しく消す)"
+								}
 							}
 						],
 						"lines": [
@@ -1995,18 +2139,6 @@
 							{
 								"patchline": {
 									"destination": [
-										"obj-26",
-										0
-									],
-									"source": [
-										"obj-25",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
 										"obj-28",
 										0
 									],
@@ -2036,25 +2168,6 @@
 										0
 									],
 									"order": 5,
-									"source": [
-										"obj-28",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-31",
-										0
-									],
-									"midpoints": [
-										34.5,
-										360.0,
-										434.5,
-										360.0
-									],
-									"order": 2,
 									"source": [
 										"obj-28",
 										0
@@ -2183,18 +2296,6 @@
 									],
 									"source": [
 										"obj-34",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-26",
-										0
-									],
-									"source": [
-										"obj-36",
 										0
 									]
 								}
@@ -2620,6 +2721,138 @@
 									],
 									"destination": [
 										"obj-6",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-25",
+										0
+									],
+									"destination": [
+										"obj-112",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-36",
+										0
+									],
+									"destination": [
+										"obj-112",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-112",
+										0
+									],
+									"destination": [
+										"obj-26",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-112",
+										1
+									],
+									"destination": [
+										"obj-113",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-113",
+										0
+									],
+									"destination": [
+										"obj-28",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-110",
+										0
+									],
+									"destination": [
+										"obj-111",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-111",
+										0
+									],
+									"destination": [
+										"obj-112",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-28",
+										0
+									],
+									"destination": [
+										"obj-114",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-114",
+										1
+									],
+									"destination": [
+										"obj-115",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-114",
+										0
+									],
+									"destination": [
+										"obj-115",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-115",
+										0
+									],
+									"destination": [
+										"obj-31",
 										0
 									]
 								}
@@ -4602,6 +4835,39 @@
 					],
 					"text": "← 低域カット量 0=なし 0.5=約-6dB 1=最大",
 					"linecount": 1
+				}
+			},
+			{
+				"box": {
+					"id": "obj-300",
+					"maxclass": "toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						300.0,
+						50.0,
+						40.0,
+						40.0
+					],
+					"outlettype": [
+						"int"
+					],
+					"parameter_enable": 0
+				}
+			},
+			{
+				"box": {
+					"id": "obj-301",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						290.0,
+						12.0,
+						75.0,
+						32.0
+					],
+					"text": "ランダム\n(1周シャッフル)"
 				}
 			}
 		],
@@ -7124,6 +7390,18 @@
 					"destination": [
 						"scamt",
 						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-300",
+						0
+					],
+					"destination": [
+						"obj-36",
+						2
 					]
 				}
 			}
