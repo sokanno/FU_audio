@@ -7,8 +7,9 @@
 
 - 新シーン「陣取りモード」(menu index **8**)の音は Max ではなく **SuperCollider** が生成
   (`mqtt_python/territory/territory_engine.scd`、25ボイス、4ch)
-- 決定済みの信号経路: **SC → BlackHole 16ch → Max(アグリゲート) → RME**
-  (SCはハードIFに触れない。実機に出すのはMaxだけ。本番IFはRME、開発機はMOTU)
+- 決定済みの信号経路: **SC → BlackHole 16ch → Max(アグリゲート) → MOTU**
+  (SCはハードIFに触れない。実機に出すのはMaxだけ)
+  IFは本番=**MOTU UltraLite-mk5**、自宅=**mk3**。入力数が違うので後述のch番号に注意
 - シーン切替は既存のまま: Max→OSC `/menu`(port 8000)→main.py。
   main.py が陣取り突入/退出でSCへフェードイン/アウトを自動送信(5秒ごと再送=自己復旧)。
   **Max側にミュート制御の実装は不要**(SCは他シーン中は無音)
@@ -24,11 +25,19 @@
 ## やること
 
 ### 1. オーディオデバイス
-- [ ] Audio MIDI 設定でアグリゲートデバイス作成: **RME + BlackHole 16ch**
-      (開発機でテストするなら MOTU + BlackHole)
+- [ ] Audio MIDI 設定でアグリゲートデバイス作成: **MOTU + BlackHole 16ch**
+      (**MOTU を先、BlackHole を後**の順に並べる。順番がch番号を決める)
 - [ ] Max のオーディオドライバをこのアグリゲートに
-- [ ] BlackHole の入力ch番号を確認(アグリゲート内でRMEの入力数の**後ろ**に並ぶ。
-      例: RMEが12inなら BlackHole ch1-4 = adc~ 13 14 15 16)
+- [ ] BlackHole の入力ch番号は MOTU の入力数の**後ろ**に並ぶ。実測値:
+
+      | IF | MOTU入力数 | BlackHole ch1-4 |
+      |---|---|---|
+      | mk5 (本番) | 20ch | **adc~ 21 22 23 24** |
+      | mk3 (自宅) | 14ch | adc~ 15 16 17 18 |
+
+      パッチの umenu は **mk5 (21) が既定**。自宅mk3では「その他のIF」を選び数値に 15。
+      別のIFなら「IFの入力数+1」を数値に入れる。
+      (CoreAudio の実測方法: アグリゲートのサブデバイス順と各入力数を見る)
 
 ### 2. SCリターンをパッチに追加
 - [ ] `adc~ <BlackHole ch1-4>` → live.gain~(SCリターン用フェーダー)

@@ -3735,7 +3735,7 @@
 				"box": {
 					"id": "obj-200",
 					"maxclass": "comment",
-					"text": "陣取り(SC)リターン ← BlackHole ch1-4\n入力構成を選ぶ。MOTU=adc~15-18 / IFなし=adc~1-4(固定)\nその他のIF: 右の数値に「IFの入力数+1」→ 右下の adc~ に set 1..4 (adc~ の set は「set 出口 チャンネル」)。store 1 で保存",
+					"text": "陣取り(SC)リターン ← BlackHole ch1-4\n入力構成を選ぶ。MOTU mk5=adc~21-24(既定) / IFなし=adc~1-4(固定)\nその他のIF: 右の数値に「IFの入力数+1」→ 右下の adc~ に set 1..4 (adc~ の set は「set 出口 チャンネル」)。store 1 で保存",
 					"patching_rect": [
 						660.0,
 						30.0,
@@ -3920,11 +3920,11 @@
 					"id": "obj-211",
 					"maxclass": "umenu",
 					"items": [
-						"MOTU アグリゲート (15)",
+						"MOTU mk5 アグリゲート (21)",
 						",",
 						"IFなし: BlackHole 直 (1)",
 						",",
-						"その他のIF (右の数値=入力数+1)"
+						"その他のIF (右の数値=入力数+1 / mk3=15)"
 					],
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -3946,7 +3946,7 @@
 				"box": {
 					"id": "obj-215",
 					"maxclass": "newobj",
-					"text": "adc~ 15 16 17 18",
+					"text": "adc~ 21 22 23 24",
 					"numinlets": 1,
 					"numoutlets": 4,
 					"outlettype": [
