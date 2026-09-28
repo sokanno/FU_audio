@@ -30301,6 +30301,342 @@
 					],
 					"text": "B 用 quadpan~(A の鏡像位置)"
 				}
+			},
+			{
+				"box": {
+					"id": "clc",
+					"maxclass": "comment",
+					"patching_rect": [
+						1760.0,
+						735.0,
+						470.0,
+						20.0
+					],
+					"text": "低域カット: 各chから onepole~ の低域成分を引く。声の帯域は残して低域だけ減る(量0=オフ)",
+					"linecount": 1
+				}
+			},
+			{
+				"box": {
+					"id": "lc0",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1760.0,
+						770.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lg0",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1760.0,
+						805.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ls0",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1760.0,
+						840.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lc1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1840.0,
+						770.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lg1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1840.0,
+						805.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ls1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1840.0,
+						840.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lc2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1920.0,
+						770.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lg2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1920.0,
+						805.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ls2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1920.0,
+						840.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lc3",
+					"maxclass": "newobj",
+					"patching_rect": [
+						2000.0,
+						770.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lg3",
+					"maxclass": "newobj",
+					"patching_rect": [
+						2000.0,
+						805.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ls3",
+					"maxclass": "newobj",
+					"patching_rect": [
+						2000.0,
+						840.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "lcfrq",
+					"maxclass": "flonum",
+					"patching_rect": [
+						1760.0,
+						880.0,
+						55.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"minimum": 20.0,
+					"maximum": 1000.0,
+					"parameter_enable": 0
+				}
+			},
+			{
+				"box": {
+					"id": "lcfl",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1825.0,
+						880.0,
+						95.0,
+						22.0
+					],
+					"text": "loadmess 150.",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "cfrq",
+					"maxclass": "comment",
+					"patching_rect": [
+						1930.0,
+						880.0,
+						300.0,
+						20.0
+					],
+					"text": "← 低域カットの周波数(Hz)",
+					"linecount": 1
+				}
+			},
+			{
+				"box": {
+					"id": "lcamt",
+					"maxclass": "flonum",
+					"patching_rect": [
+						1760.0,
+						915.0,
+						55.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"minimum": 0.0,
+					"maximum": 1.0,
+					"parameter_enable": 0
+				}
+			},
+			{
+				"box": {
+					"id": "lcal",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1825.0,
+						915.0,
+						95.0,
+						22.0
+					],
+					"text": "loadmess 0.",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "camt",
+					"maxclass": "comment",
+					"patching_rect": [
+						1930.0,
+						915.0,
+						340.0,
+						20.0
+					],
+					"text": "← 低域カット量 0=なし 0.5=約-6dB 1=最大",
+					"linecount": 1
+				}
 			}
 		],
 		"lines": [
@@ -31293,54 +31629,6 @@
 			{
 				"patchline": {
 					"source": [
-						"mk0",
-						0
-					],
-					"destination": [
-						"obj-16",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"mk1",
-						0
-					],
-					"destination": [
-						"obj-16",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"mk2",
-						0
-					],
-					"destination": [
-						"obj-16",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"mk3",
-						0
-					],
-					"destination": [
-						"obj-16",
-						3
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"lm",
 						0
 					],
@@ -32018,6 +32306,366 @@
 					],
 					"destination": [
 						"mk3",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk0",
+						0
+					],
+					"destination": [
+						"ls0",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk0",
+						0
+					],
+					"destination": [
+						"lc0",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lc0",
+						0
+					],
+					"destination": [
+						"lg0",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lg0",
+						0
+					],
+					"destination": [
+						"ls0",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ls0",
+						0
+					],
+					"destination": [
+						"obj-16",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcamt",
+						0
+					],
+					"destination": [
+						"lg0",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcfrq",
+						0
+					],
+					"destination": [
+						"lc0",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk1",
+						0
+					],
+					"destination": [
+						"ls1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk1",
+						0
+					],
+					"destination": [
+						"lc1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lc1",
+						0
+					],
+					"destination": [
+						"lg1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lg1",
+						0
+					],
+					"destination": [
+						"ls1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ls1",
+						0
+					],
+					"destination": [
+						"obj-16",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcamt",
+						0
+					],
+					"destination": [
+						"lg1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcfrq",
+						0
+					],
+					"destination": [
+						"lc1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk2",
+						0
+					],
+					"destination": [
+						"ls2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk2",
+						0
+					],
+					"destination": [
+						"lc2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lc2",
+						0
+					],
+					"destination": [
+						"lg2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lg2",
+						0
+					],
+					"destination": [
+						"ls2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ls2",
+						0
+					],
+					"destination": [
+						"obj-16",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcamt",
+						0
+					],
+					"destination": [
+						"lg2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcfrq",
+						0
+					],
+					"destination": [
+						"lc2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk3",
+						0
+					],
+					"destination": [
+						"ls3",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"mk3",
+						0
+					],
+					"destination": [
+						"lc3",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lc3",
+						0
+					],
+					"destination": [
+						"lg3",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lg3",
+						0
+					],
+					"destination": [
+						"ls3",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ls3",
+						0
+					],
+					"destination": [
+						"obj-16",
+						3
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcamt",
+						0
+					],
+					"destination": [
+						"lg3",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcfrq",
+						0
+					],
+					"destination": [
+						"lc3",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcfl",
+						0
+					],
+					"destination": [
+						"lcfrq",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"lcal",
+						0
+					],
+					"destination": [
+						"lcamt",
 						0
 					]
 				}

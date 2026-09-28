@@ -1035,7 +1035,7 @@
 										67.0,
 										22.0
 									],
-									"text": "delay 4500"
+									"text": "delay 6500"
 								}
 							},
 							{
@@ -1127,7 +1127,7 @@
 										61.0,
 										22.0
 									],
-									"text": "pipe 1000"
+									"text": "pipe 3000"
 								}
 							},
 							{
@@ -1213,7 +1213,7 @@
 										61.0,
 										22.0
 									],
-									"text": "pipe 1000"
+									"text": "pipe 3000"
 								}
 							},
 							{
@@ -1418,7 +1418,7 @@
 										61.0,
 										22.0
 									],
-									"text": "pipe 1000"
+									"text": "pipe 3000"
 								}
 							},
 							{
@@ -1777,7 +1777,7 @@
 								"box": {
 									"id": "obj-93",
 									"maxclass": "comment",
-									"text": "等パワー・クロスフェード 2秒。\n/menu n と同時(1秒後)に旧シーン out / 新シーン in",
+									"text": "等パワー・クロスフェード 2秒。\n/menu n と同時(3秒後)に旧シーン out / 新シーン in",
 									"patching_rect": [
 										800.0,
 										470.0,
@@ -4265,6 +4265,344 @@
 					],
 					"text": "← ウーファー音量(store 1 で保存)。カットオフは lores~ の数値"
 				}
+			},
+			{
+				"box": {
+					"id": "cscA",
+					"maxclass": "comment",
+					"patching_rect": [
+						980.0,
+						170.0,
+						470.0,
+						34.0
+					],
+					"text": "向き合う(shimmer + shimmerBGM)の低域カット。各chから onepole~ の低域を引く。量0=オフ",
+					"linecount": 2
+				}
+			},
+			{
+				"box": {
+					"id": "sc0",
+					"maxclass": "newobj",
+					"patching_rect": [
+						980.0,
+						215.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sg0",
+					"maxclass": "newobj",
+					"patching_rect": [
+						980.0,
+						250.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ss0",
+					"maxclass": "newobj",
+					"patching_rect": [
+						980.0,
+						285.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sc1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1060.0,
+						215.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sg1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1060.0,
+						250.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ss1",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1060.0,
+						285.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sc2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1140.0,
+						215.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sg2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1140.0,
+						250.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ss2",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1140.0,
+						285.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sc3",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1220.0,
+						215.0,
+						75.0,
+						22.0
+					],
+					"text": "onepole~ 150.",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "sg3",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1220.0,
+						250.0,
+						75.0,
+						22.0
+					],
+					"text": "*~ 0.5",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "ss3",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1220.0,
+						285.0,
+						75.0,
+						22.0
+					],
+					"text": "-~",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "scfrq",
+					"maxclass": "flonum",
+					"patching_rect": [
+						980.0,
+						330.0,
+						55.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"parameter_enable": 0,
+					"varname": "sub_level",
+					"minimum": 20.0,
+					"maximum": 1000.0
+				}
+			},
+			{
+				"box": {
+					"id": "scfl",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1045.0,
+						330.0,
+						95.0,
+						22.0
+					],
+					"text": "loadmess 150.",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "cscB",
+					"maxclass": "comment",
+					"patching_rect": [
+						1150.0,
+						330.0,
+						300.0,
+						20.0
+					],
+					"text": "← 低域カットの周波数(Hz)",
+					"linecount": 1
+				}
+			},
+			{
+				"box": {
+					"id": "scamt",
+					"maxclass": "flonum",
+					"patching_rect": [
+						980.0,
+						365.0,
+						55.0,
+						22.0
+					],
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						"bang"
+					],
+					"parameter_enable": 0,
+					"varname": "sub_level",
+					"minimum": 0.0,
+					"maximum": 1.0
+				}
+			},
+			{
+				"box": {
+					"id": "scal",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1045.0,
+						365.0,
+						95.0,
+						22.0
+					],
+					"text": "loadmess 0.",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "cscC",
+					"maxclass": "comment",
+					"patching_rect": [
+						1150.0,
+						365.0,
+						340.0,
+						20.0
+					],
+					"text": "← 低域カット量 0=なし 0.5=約-6dB 1=最大",
+					"linecount": 1
+				}
 			}
 		],
 		"lines": [
@@ -5724,54 +6062,6 @@
 			{
 				"patchline": {
 					"destination": [
-						"obj-17",
-						3
-					],
-					"source": [
-						"obj-8",
-						3
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-17",
-						2
-					],
-					"source": [
-						"obj-8",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-17",
-						1
-					],
-					"source": [
-						"obj-8",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-17",
-						0
-					],
-					"source": [
-						"obj-8",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
 						"obj-5",
 						1
 					],
@@ -6474,6 +6764,366 @@
 					"destination": [
 						"obj-63",
 						4
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						0
+					],
+					"destination": [
+						"ss0",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						0
+					],
+					"destination": [
+						"sc0",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sc0",
+						0
+					],
+					"destination": [
+						"sg0",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sg0",
+						0
+					],
+					"destination": [
+						"ss0",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ss0",
+						0
+					],
+					"destination": [
+						"obj-17",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scamt",
+						0
+					],
+					"destination": [
+						"sg0",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scfrq",
+						0
+					],
+					"destination": [
+						"sc0",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						1
+					],
+					"destination": [
+						"ss1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						1
+					],
+					"destination": [
+						"sc1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sc1",
+						0
+					],
+					"destination": [
+						"sg1",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sg1",
+						0
+					],
+					"destination": [
+						"ss1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ss1",
+						0
+					],
+					"destination": [
+						"obj-17",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scamt",
+						0
+					],
+					"destination": [
+						"sg1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scfrq",
+						0
+					],
+					"destination": [
+						"sc1",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						2
+					],
+					"destination": [
+						"ss2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						2
+					],
+					"destination": [
+						"sc2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sc2",
+						0
+					],
+					"destination": [
+						"sg2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sg2",
+						0
+					],
+					"destination": [
+						"ss2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ss2",
+						0
+					],
+					"destination": [
+						"obj-17",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scamt",
+						0
+					],
+					"destination": [
+						"sg2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scfrq",
+						0
+					],
+					"destination": [
+						"sc2",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						3
+					],
+					"destination": [
+						"ss3",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-8",
+						3
+					],
+					"destination": [
+						"sc3",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sc3",
+						0
+					],
+					"destination": [
+						"sg3",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"sg3",
+						0
+					],
+					"destination": [
+						"ss3",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"ss3",
+						0
+					],
+					"destination": [
+						"obj-17",
+						3
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scamt",
+						0
+					],
+					"destination": [
+						"sg3",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scfrq",
+						0
+					],
+					"destination": [
+						"sc3",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scfl",
+						0
+					],
+					"destination": [
+						"scfrq",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"scal",
+						0
+					],
+					"destination": [
+						"scamt",
+						0
 					]
 				}
 			}
