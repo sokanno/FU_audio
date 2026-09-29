@@ -243,7 +243,7 @@
 						70.0,
 						22.0
 					],
-					"text": "loadmess 6"
+					"text": "loadmess -1"
 				}
 			},
 			{
@@ -304,7 +304,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_initial": [
-								6
+								-1.0
 							],
 							"parameter_initial_enable": 1,
 							"parameter_longname": "live.gain~[11]",
@@ -472,7 +472,7 @@
 						300.0,
 						20.0
 					],
-					"text": "リア(3・4ch): 同じファイルを 8分30秒ずらして再生。6kHz で暗く、音量は前と同じ +6dB"
+					"text": "リア(3・4ch): 同じファイルを 8分30秒ずらして再生。6kHz で暗く、音量 +6dB(前は -1dB)"
 				}
 			},
 			{
