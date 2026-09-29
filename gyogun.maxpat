@@ -383,7 +383,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_initial": [
-								-6
+								6.0
 							],
 							"parameter_initial_enable": 1,
 							"parameter_longname": "gyogun_rear",
@@ -408,7 +408,7 @@
 						70.0,
 						22.0
 					],
-					"text": "loadmess -6",
+					"text": "loadmess 6",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [
@@ -472,7 +472,95 @@
 						300.0,
 						20.0
 					],
-					"text": "リア(3・4ch): フロントと同じ音を少し暗く・弱く"
+					"text": "リア(3・4ch): 同じファイルを 8分30秒ずらして再生。6kHz で暗く、音量は前と同じ +6dB"
+				}
+			},
+			{
+				"box": {
+					"id": "grcm",
+					"maxclass": "comment",
+					"patching_rect": [
+						820.0,
+						66.0,
+						460.0,
+						32.0
+					],
+					"text": "リア用: 同じ mugelsee_wave.wav を 8分30秒ずらして再生。\n前後の波形が無相関になり、コピーより自然に広がる",
+					"linecount": 2
+				}
+			},
+			{
+				"box": {
+					"id": "grop",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					],
+					"patching_rect": [
+						820.0,
+						100.0,
+						230.0,
+						22.0
+					],
+					"text": "open mugelsee_wave.wav"
+				}
+			},
+			{
+				"box": {
+					"id": "grsf",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 3,
+					"outlettype": [
+						"signal",
+						"signal",
+						"bang"
+					],
+					"patching_rect": [
+						820.0,
+						140.0,
+						80.0,
+						22.0
+					],
+					"text": "sfplay~ 2"
+				}
+			},
+			{
+				"box": {
+					"id": "grdl",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						"bang"
+					],
+					"patching_rect": [
+						1070.0,
+						100.0,
+						90.0,
+						22.0
+					],
+					"text": "delay 6000"
+				}
+			},
+			{
+				"box": {
+					"id": "grsk",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					],
+					"patching_rect": [
+						1070.0,
+						140.0,
+						110.0,
+						22.0
+					],
+					"text": "seek 510000"
 				}
 			}
 		],
@@ -734,7 +822,91 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-12",
+						"obj-6",
+						0
+					],
+					"destination": [
+						"grop",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"grop",
+						0
+					],
+					"destination": [
+						"grsf",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-11",
+						0
+					],
+					"destination": [
+						"grsf",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-16",
+						0
+					],
+					"destination": [
+						"grsf",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-6",
+						0
+					],
+					"destination": [
+						"grdl",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"grdl",
+						0
+					],
+					"destination": [
+						"grsk",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"grsk",
+						0
+					],
+					"destination": [
+						"grsf",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"grsf",
 						0
 					],
 					"destination": [
@@ -746,7 +918,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-12",
+						"grsf",
 						1
 					],
 					"destination": [

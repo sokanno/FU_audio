@@ -25,6 +25,8 @@ FU_audio/
 ├── crowd1〜4.wav             ← Zip
 ├── mountainWind.wav          ← Zip
 ├── mugelsee_wave.wav         ← Zip
+├── DawnChorus260611.wav      ← Zip  回る天井の鳥(2026-09-29 追加)
+├── FU_Katowice.wav           ← Zip  two of us の BGM
 ├── EveryColouredSky.wav      ← Zip
 ├── TheOtherSideOfTheSea.wav  ← Zip
 ├── crowds/                   ← Zip  polybuffer~ crowdsamples が
