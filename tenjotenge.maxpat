@@ -30637,6 +30637,71 @@
 					"text": "← 低域カット量 0=なし 0.5=約-6dB 1=最大",
 					"linecount": 1
 				}
+			},
+			{
+				"box": {
+					"id": "tslc",
+					"maxclass": "comment",
+					"patching_rect": [
+						1800.0,
+						622.0,
+						340.0,
+						20.0
+					],
+					"text": "↓ リバーブ送りの保護リミッター(hotaru と同じ)",
+					"linecount": 1
+				}
+			},
+			{
+				"box": {
+					"id": "tslim",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1800.0,
+						644.0,
+						330.0,
+						22.0
+					],
+					"text": "limi~ 1 @threshold -3. @release 150 @lookahead 64",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [
+						"signal"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "trlc",
+					"maxclass": "comment",
+					"patching_rect": [
+						1000.0,
+						712.0,
+						340.0,
+						20.0
+					],
+					"text": "↓ リバーブ戻りの保護リミッター(-3 dB で頭打ち)",
+					"linecount": 1
+				}
+			},
+			{
+				"box": {
+					"id": "trlim",
+					"maxclass": "newobj",
+					"patching_rect": [
+						1000.0,
+						734.0,
+						330.0,
+						22.0
+					],
+					"text": "limi~ 2 @threshold -3. @release 200 @lookahead 64",
+					"numinlets": 2,
+					"numoutlets": 2,
+					"outlettype": [
+						"signal",
+						"signal"
+					]
+				}
 			}
 		],
 		"lines": [
@@ -30985,18 +31050,6 @@
 			{
 				"patchline": {
 					"destination": [
-						"obj-2",
-						0
-					],
-					"source": [
-						"obj-40",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
 						"obj-40",
 						0
 					],
@@ -31305,18 +31358,6 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-37",
-						0
-					],
-					"destination": [
-						"obj-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"obj-7",
 						0
 					],
@@ -31406,18 +31447,6 @@
 					],
 					"destination": [
 						"mk3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"es",
-						0
-					],
-					"destination": [
-						"obj-2",
 						0
 					]
 				}
@@ -31574,30 +31603,6 @@
 					],
 					"destination": [
 						"qd",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-2",
-						2
-					],
-					"destination": [
-						"wgl",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-2",
-						3
-					],
-					"destination": [
-						"wgr",
 						0
 					]
 				}
@@ -32666,6 +32671,102 @@
 					],
 					"destination": [
 						"lcamt",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-40",
+						0
+					],
+					"destination": [
+						"tslim",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-37",
+						0
+					],
+					"destination": [
+						"tslim",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"es",
+						0
+					],
+					"destination": [
+						"tslim",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"tslim",
+						0
+					],
+					"destination": [
+						"obj-2",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-2",
+						2
+					],
+					"destination": [
+						"trlim",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-2",
+						3
+					],
+					"destination": [
+						"trlim",
+						1
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"trlim",
+						0
+					],
+					"destination": [
+						"wgl",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"trlim",
+						1
+					],
+					"destination": [
+						"wgr",
 						0
 					]
 				}
