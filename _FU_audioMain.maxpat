@@ -468,7 +468,7 @@
 						78.0,
 						32.0
 					],
-					"text": "手動で次のシーンへ",
+					"text": "\u624b\u52d5\u3067\u6b21\u306e\u30b7\u30fc\u30f3\u3078",
 					"textjustification": 1
 				}
 			},
@@ -503,7 +503,7 @@
 						71.0,
 						32.0
 					],
-					"text": "自動シーン切り替え",
+					"text": "\u81ea\u52d5\u30b7\u30fc\u30f3\u5207\u308a\u66ff\u3048",
 					"textjustification": 1
 				}
 			},
@@ -715,7 +715,7 @@
 										208.0,
 										33.0
 									],
-									"text": "7 = 陣取りモード(SC, /menu 8)。\nMaxのフェーダーは無し(SCはmain.pyがフェード)"
+									"text": "7 = \u9663\u53d6\u308a(SC, /menu 8)\u30018 = \u7e2e\u3080\u90e8\u5c4b(SC, /menu 9)\u3002\nSC\u30b7\u30fc\u30f3\u306fMax\u306e\u30d5\u30a7\u30fc\u30c0\u30fc\u7121\u3057(main.py/SC\u304c\u30d5\u30a7\u30fc\u30c9)"
 								}
 							},
 							{
@@ -1143,7 +1143,7 @@
 										208.0,
 										32.0
 									],
-									"text": "毎回トランジション時にマニュアルポジションを挟む"
+									"text": "\u6bce\u56de\u30c8\u30e9\u30f3\u30b8\u30b7\u30e7\u30f3\u6642\u306b\u30de\u30cb\u30e5\u30a2\u30eb\u30dd\u30b8\u30b7\u30e7\u30f3\u3092\u631f\u3080"
 								}
 							},
 							{
@@ -1329,8 +1329,9 @@
 									"id": "obj-45",
 									"maxclass": "newobj",
 									"numinlets": 8,
-									"numoutlets": 8,
+									"numoutlets": 9,
 									"outlettype": [
+										"bang",
 										"bang",
 										"bang",
 										"bang",
@@ -1346,7 +1347,7 @@
 										285.0000000000001,
 										22.0
 									],
-									"text": "sel 1 2 3 4 5 6 7"
+									"text": "sel 1 2 3 4 5 6 7 8"
 								}
 							},
 							{
@@ -1458,7 +1459,7 @@
 										69.0,
 										22.0
 									],
-									"text": "counter 1 7"
+									"text": "counter 1 8"
 								}
 							},
 							{
@@ -1532,8 +1533,9 @@
 									"id": "obj-17",
 									"maxclass": "newobj",
 									"numinlets": 2,
-									"numoutlets": 7,
+									"numoutlets": 8,
 									"outlettype": [
+										"",
 										"",
 										"",
 										"",
@@ -1548,7 +1550,7 @@
 										279.0000000000001,
 										22.0
 									],
-									"text": "gate 7"
+									"text": "gate 8"
 								}
 							},
 							{
@@ -1628,8 +1630,9 @@
 									"id": "obj-10",
 									"maxclass": "newobj",
 									"numinlets": 2,
-									"numoutlets": 7,
+									"numoutlets": 8,
 									"outlettype": [
+										"",
 										"",
 										"",
 										"",
@@ -1644,7 +1647,7 @@
 										277.0,
 										22.0
 									],
-									"text": "gate 7"
+									"text": "gate 8"
 								}
 							},
 							{
@@ -1723,7 +1726,7 @@
 								"box": {
 									"id": "obj-90",
 									"maxclass": "newobj",
-									"text": "expr $i1 + ($i1 == 7)",
+									"text": "expr $i1 + ($i1 >= 7)",
 									"numinlets": 1,
 									"numoutlets": 1,
 									"outlettype": [
@@ -1777,7 +1780,7 @@
 								"box": {
 									"id": "obj-93",
 									"maxclass": "comment",
-									"text": "旧シーンは /menu 0 と同時に即フェードアウト(2秒)。\n新シーンは3秒後に /menu n + フェードイン(2秒)。\n旧シーンの生成が止まって固まる区間を、フェードで隠すため",
+									"text": "\u65e7\u30b7\u30fc\u30f3\u306f /menu 0 \u3068\u540c\u6642\u306b\u5373\u30d5\u30a7\u30fc\u30c9\u30a2\u30a6\u30c8(2\u79d2)\u3002\n\u65b0\u30b7\u30fc\u30f3\u306f3\u79d2\u5f8c\u306b /menu n + \u30d5\u30a7\u30fc\u30c9\u30a4\u30f3(2\u79d2)\u3002\n\u65e7\u30b7\u30fc\u30f3\u306e\u751f\u6210\u304c\u6b62\u307e\u3063\u3066\u56fa\u307e\u308b\u533a\u9593\u3092\u3001\u30d5\u30a7\u30fc\u30c9\u3067\u96a0\u3059\u305f\u3081",
 									"patching_rect": [
 										800.0,
 										470.0,
@@ -1801,7 +1804,7 @@
 									"outlettype": [
 										""
 									],
-									"comment": "ランダム ON/OFF"
+									"comment": "\u30e9\u30f3\u30c0\u30e0 ON/OFF"
 								}
 							},
 							{
@@ -1912,7 +1915,7 @@
 										260.0,
 										60.0
 									],
-									"text": "ランダム: 1周(7シーン)ごとにシャッフル。全部出るまでダブらず、周の変わり目も同じシーンは続かない。順番は Max コンソールに出る。"
+									"text": "\u30e9\u30f3\u30c0\u30e0: 1\u5468(8\u30b7\u30fc\u30f3)\u3054\u3068\u306b\u30b7\u30e3\u30c3\u30d5\u30eb\u3002\u5168\u90e8\u51fa\u308b\u307e\u3067\u30c0\u30d6\u3089\u305a\u3001\u5468\u306e\u5909\u308f\u308a\u76ee\u3082\u540c\u3058\u30b7\u30fc\u30f3\u306f\u7d9a\u304b\u306a\u3044\u3002\u9806\u756a\u306f Max \u30b3\u30f3\u30bd\u30fc\u30eb\u306b\u51fa\u308b\u3002"
 								}
 							},
 							{
@@ -1927,7 +1930,224 @@
 										240.0,
 										33.0
 									],
-									"text": "直前のシーン番号を覚えておき、3秒後にそのシーンをフェードアウト(ランダムでも正しく消す)"
+									"text": "\u76f4\u524d\u306e\u30b7\u30fc\u30f3\u756a\u53f7\u3092\u899a\u3048\u3066\u304a\u304d\u30013\u79d2\u5f8c\u306b\u305d\u306e\u30b7\u30fc\u30f3\u3092\u30d5\u30a7\u30fc\u30c9\u30a2\u30a6\u30c8(\u30e9\u30f3\u30c0\u30e0\u3067\u3082\u6b63\u3057\u304f\u6d88\u3059)"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-200",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"text": "8",
+									"patching_rect": [
+										691.0,
+										534.0,
+										29.5,
+										22.0
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-230",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 1,
+									"text": "udpreceive 57121",
+									"patching_rect": [
+										195.0,
+										81.0,
+										110.0,
+										22.0
+									],
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-231",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 2,
+									"text": "route /scene_done",
+									"patching_rect": [
+										195.0,
+										109.0,
+										110.0,
+										22.0
+									],
+									"outlettype": [
+										"",
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-232",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 1,
+									"text": "t b",
+									"patching_rect": [
+										195.0,
+										137.0,
+										40.0,
+										22.0
+									],
+									"outlettype": [
+										"bang"
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-233",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "i",
+									"patching_rect": [
+										195.0,
+										165.0,
+										40.0,
+										22.0
+									],
+									"outlettype": [
+										"int"
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-234",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"text": "sel 8",
+									"patching_rect": [
+										195.0,
+										193.0,
+										46.0,
+										22.0
+									],
+									"outlettype": [
+										"bang",
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-235",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "i",
+									"patching_rect": [
+										195.0,
+										221.0,
+										40.0,
+										22.0
+									],
+									"outlettype": [
+										"int"
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-236",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"text": "sel 1",
+									"patching_rect": [
+										195.0,
+										249.0,
+										46.0,
+										22.0
+									],
+									"outlettype": [
+										"bang",
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-237",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "1",
+									"patching_rect": [
+										195.0,
+										277.0,
+										29.5,
+										22.0
+									],
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-238",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 2,
+									"text": "sel 8",
+									"patching_rect": [
+										325.0,
+										193.0,
+										46.0,
+										22.0
+									],
+									"outlettype": [
+										"bang",
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-239",
+									"maxclass": "message",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "0",
+									"patching_rect": [
+										325.0,
+										221.0,
+										29.5,
+										22.0
+									],
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-240",
+									"maxclass": "comment",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"text": "\u7e2e\u3080\u90e8\u5c4b(8)\u306f\u6642\u9593\u3067\u306a\u304f1\u5468\u3067\u7d42\u308f\u308b: main.py \u304c\u62e1\u6563\u5b8c\u4e86\u3067 /scene_done \u3092\u9001\u308b \u2192\n(autoplay\u4e2d\u304b\u3064\u30b7\u30fc\u30f38\u306a\u3089) metro \u3092\u518d\u59cb\u52d5 = \u5373bang\u3067\u6b21\u306e\u30b7\u30fc\u30f3(\u9806\u9001\u308a\u306a\u3089\u9b5a\u7fa4)\u3078\u3002\n\u30b7\u30fc\u30f38\u306b\u5165\u3063\u305f\u6642\u70b9\u3067 metro \u306f\u6b62\u3081\u308b (150\u79d2\u30bf\u30a4\u30de\u30fc\u306f\u7e2e\u3080\u90e8\u5c4b\u3067\u306f\u4f7f\u308f\u306a\u3044)",
+									"patching_rect": [
+										375.0,
+										91.0,
+										260.0,
+										22.0
+									]
 								}
 							}
 						],
@@ -2856,6 +3076,186 @@
 										0
 									]
 								}
+							},
+							{
+								"patchline": {
+									"destination": [
+										"obj-200",
+										0
+									],
+									"source": [
+										"obj-45",
+										7
+									]
+								}
+							},
+							{
+								"patchline": {
+									"destination": [
+										"obj-17",
+										0
+									],
+									"source": [
+										"obj-200",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-230",
+										0
+									],
+									"destination": [
+										"obj-231",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-231",
+										0
+									],
+									"destination": [
+										"obj-232",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-232",
+										0
+									],
+									"destination": [
+										"obj-233",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-31",
+										0
+									],
+									"destination": [
+										"obj-233",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-233",
+										0
+									],
+									"destination": [
+										"obj-234",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-234",
+										0
+									],
+									"destination": [
+										"obj-235",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-24",
+										0
+									],
+									"destination": [
+										"obj-235",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-235",
+										0
+									],
+									"destination": [
+										"obj-236",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-236",
+										0
+									],
+									"destination": [
+										"obj-237",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-237",
+										0
+									],
+									"destination": [
+										"obj-25",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-31",
+										0
+									],
+									"destination": [
+										"obj-238",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-238",
+										0
+									],
+									"destination": [
+										"obj-239",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-239",
+										0
+									],
+									"destination": [
+										"obj-25",
+										0
+									]
+								}
 							}
 						]
 					},
@@ -3738,7 +4138,7 @@
 						205.0,
 						20.0
 					],
-					"text": "出力モード（store 1 で保存される）"
+					"text": "\u51fa\u529b\u30e2\u30fc\u30c9\uff08store 1 \u3067\u4fdd\u5b58\u3055\u308c\u308b\uff09"
 				}
 			},
 			{
@@ -3749,7 +4149,7 @@
 						",",
 						"4ch",
 						",",
-						"2ch test: 前後→左右"
+						"2ch test: \u524d\u5f8c\u2192\u5de6\u53f3"
 					],
 					"maxclass": "umenu",
 					"numinlets": 1,
@@ -3840,7 +4240,7 @@
 						220.0,
 						33.0
 					],
-					"text": "2ch: 3/4 を 1/2 に折り込み(ウーファーなし)。REC(sfrecord~)は常にこの2mix"
+					"text": "2ch: 3/4 \u3092 1/2 \u306b\u6298\u308a\u8fbc\u307f(\u30a6\u30fc\u30d5\u30a1\u30fc\u306a\u3057)\u3002REC(sfrecord~)\u306f\u5e38\u306b\u3053\u306e2mix"
 				}
 			},
 			{
@@ -3929,7 +4329,7 @@
 						171.0,
 						33.0
 					],
-					"text": "← 起動時: 4chに設定→preset 1呼び出し (展示機は4ch固定。2chで開発するときはメニューで切替)"
+					"text": "\u2190 \u8d77\u52d5\u6642: 4ch\u306b\u8a2d\u5b9a\u2192preset 1\u547c\u3073\u51fa\u3057 (\u5c55\u793a\u6a5f\u306f4ch\u56fa\u5b9a\u30022ch\u3067\u958b\u767a\u3059\u308b\u3068\u304d\u306f\u30e1\u30cb\u30e5\u30fc\u3067\u5207\u66ff)"
 				}
 			},
 			{
@@ -3960,7 +4360,7 @@
 						220.0,
 						33.0
 					],
-					"text": "テスト: L=前(1+2) R=後(3+4)。前後の動きをイヤフォンで確認する用",
+					"text": "\u30c6\u30b9\u30c8: L=\u524d(1+2) R=\u5f8c(3+4)\u3002\u524d\u5f8c\u306e\u52d5\u304d\u3092\u30a4\u30e4\u30d5\u30a9\u30f3\u3067\u78ba\u8a8d\u3059\u308b\u7528",
 					"linecount": 2
 				}
 			},
@@ -3968,7 +4368,7 @@
 				"box": {
 					"id": "obj-200",
 					"maxclass": "comment",
-					"text": "陣取り(SC)リターン ← BlackHole ch1-4\n入力構成を選ぶ。MOTU mk5=adc~21-24(既定) / IFなし=adc~1-4(固定)\nその他のIF: 右の数値に「IFの入力数+1」→ 右下の adc~ に set 1..4 (adc~ の set は「set 出口 チャンネル」)。store 1 で保存",
+					"text": "\u9663\u53d6\u308a(SC)\u30ea\u30bf\u30fc\u30f3 \u2190 BlackHole ch1-4\n\u5165\u529b\u69cb\u6210\u3092\u9078\u3076\u3002MOTU mk5=adc~21-24(\u65e2\u5b9a) / IF\u306a\u3057=adc~1-4(\u56fa\u5b9a)\n\u305d\u306e\u4ed6\u306eIF: \u53f3\u306e\u6570\u5024\u306b\u300cIF\u306e\u5165\u529b\u6570+1\u300d\u2192 \u53f3\u4e0b\u306e adc~ \u306b set 1..4 (adc~ \u306e set \u306f\u300cset \u51fa\u53e3 \u30c1\u30e3\u30f3\u30cd\u30eb\u300d)\u3002store 1 \u3067\u4fdd\u5b58",
 					"patching_rect": [
 						660.0,
 						30.0,
@@ -4139,7 +4539,7 @@
 				"box": {
 					"id": "obj-210",
 					"maxclass": "comment",
-					"text": "SC→マスター *~ (→matrix~ 入力1-4)。\n出力モード/REC 2mix に自動で乗る。\nSCは陣取り以外では無音(main.pyが制御)\nのでシーンフェーダー不要",
+					"text": "SC\u2192\u30de\u30b9\u30bf\u30fc *~ (\u2192matrix~ \u5165\u529b1-4)\u3002\n\u51fa\u529b\u30e2\u30fc\u30c9/REC 2mix \u306b\u81ea\u52d5\u3067\u4e57\u308b\u3002\nSC\u306f\u9663\u53d6\u308a/\u7e2e\u3080\u90e8\u5c4b\u4ee5\u5916\u3067\u306f\u7121\u97f3(main.py\u304c\u5236\u5fa1)\n\u306e\u3067\u30b7\u30fc\u30f3\u30d5\u30a7\u30fc\u30c0\u30fc\u4e0d\u8981",
 					"patching_rect": [
 						726.0,
 						360.0,
@@ -4153,11 +4553,11 @@
 					"id": "obj-211",
 					"maxclass": "umenu",
 					"items": [
-						"MOTU mk5 アグリゲート (21)",
+						"MOTU mk5 \u30a2\u30b0\u30ea\u30b2\u30fc\u30c8 (21)",
 						",",
-						"IFなし: BlackHole 直 (1)",
+						"IF\u306a\u3057: BlackHole \u76f4 (1)",
 						",",
-						"その他のIF (右の数値=入力数+1 / mk3=15)"
+						"\u305d\u306e\u4ed6\u306eIF (\u53f3\u306e\u6570\u5024=\u5165\u529b\u6570+1 / mk3=15)"
 					],
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -4389,7 +4789,7 @@
 						300.0,
 						20.0
 					],
-					"text": "ウーファー(dac~ 5): 4chの和 → LPF 100Hz ×2 → 音量。4chモードのみ"
+					"text": "\u30a6\u30fc\u30d5\u30a1\u30fc(dac~ 5): 4ch\u306e\u548c \u2192 LPF 100Hz \u00d72 \u2192 \u97f3\u91cf\u30024ch\u30e2\u30fc\u30c9\u306e\u307f"
 				}
 			},
 			{
@@ -4496,7 +4896,7 @@
 						300.0,
 						20.0
 					],
-					"text": "← ウーファー音量(store 1 で保存)。カットオフは lores~ の数値"
+					"text": "\u2190 \u30a6\u30fc\u30d5\u30a1\u30fc\u97f3\u91cf(store 1 \u3067\u4fdd\u5b58)\u3002\u30ab\u30c3\u30c8\u30aa\u30d5\u306f lores~ \u306e\u6570\u5024"
 				}
 			},
 			{
@@ -4509,7 +4909,7 @@
 						470.0,
 						34.0
 					],
-					"text": "向き合う(shimmer + shimmerBGM)の低域カット。各chから onepole~ の低域を引く。量0=オフ",
+					"text": "\u5411\u304d\u5408\u3046(shimmer + shimmerBGM)\u306e\u4f4e\u57df\u30ab\u30c3\u30c8\u3002\u5404ch\u304b\u3089 onepole~ \u306e\u4f4e\u57df\u3092\u5f15\u304f\u3002\u91cf0=\u30aa\u30d5",
 					"linecount": 2
 				}
 			},
@@ -4779,7 +5179,7 @@
 						300.0,
 						20.0
 					],
-					"text": "← 低域カットの周波数(Hz)",
+					"text": "\u2190 \u4f4e\u57df\u30ab\u30c3\u30c8\u306e\u5468\u6ce2\u6570(Hz)",
 					"linecount": 1
 				}
 			},
@@ -4833,7 +5233,7 @@
 						340.0,
 						20.0
 					],
-					"text": "← 低域カット量 0=なし 0.5=約-6dB 1=最大",
+					"text": "\u2190 \u4f4e\u57df\u30ab\u30c3\u30c8\u91cf 0=\u306a\u3057 0.5=\u7d04-6dB 1=\u6700\u5927",
 					"linecount": 1
 				}
 			},
@@ -4867,7 +5267,7 @@
 						75.0,
 						32.0
 					],
-					"text": "ランダム\n(1周シャッフル)"
+					"text": "\u30e9\u30f3\u30c0\u30e0\n(1\u5468\u30b7\u30e3\u30c3\u30d5\u30eb)"
 				}
 			}
 		],
